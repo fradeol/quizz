@@ -1,38 +1,102 @@
-.App {
+/* Titres et texte */
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1{
+  font-size: 100px;
+  font-family: 'Bangers', cursive;
+  font-weight: lighter;
+  color: var(--title);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2, h3, p, a, label {
+  font-family: 'Overlock', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2{
+  font-size: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3{
+  font-size: 40px;
+  padding: 40px;
+}
+
+p, a, label {
+  font-size: 30px;
+  color: var(--text);
+}
+
+main{
+  margin: auto;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+h3{
+  font-size: 30px;
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Couleurs */
+
+:root{
+
+  /* Couleurs de base */
+
+  --black:#000000;
+  --white:#ffffff;
+  --gray:#d9d9d9;
+  --darkGray:#656262;
+  --crazyQuizOrange:#ff9900;
+  --crazyQuizPurple:#9900ff;
+
+  /* Couleurs des catégories */
+  --colorHtml: #e44d26;
+  --colorCSS: #264de4;
+  --colorJS: #f7e018;
+  --colorReact:#61dbfb;
+
+  /* Texte, Bordure et fond*/
+
+  --text: var(--black);
+  --title: var(--black);
+  --backgroundStart: var(--darkGray)
+  --backgroundHeader: var(--gray);
+  --textButton: var(--white);
+
+}
+
+.colorHtml{
+  background-color: var(--colorHtml);
+  color: var(--white);
+}
+.colorCSS{
+  background-color: var(--colorCSS);
+  color: var(--white);
+}
+.colorJS{
+  background-color: var(--colorJS);
+  color: var(--black);
+}
+.colorReact{
+  background-color: var(--colorReact);
+  color: var(--black);
+}
+
+body{
+  background-color: var(--gray);
+}
+
+img{
+  width: 500px;
 }
