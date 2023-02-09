@@ -32,7 +32,7 @@ function App() {
       <img src={logoJSBanner} alt="" />
       <img src={logoReactBanner} alt="" />
 
-      <article className='colorHtml'>
+      <article className='colorHTML'>
         <h2>HTML</h2>
       </article>
       <article className='colorCSS'>

@@ -78,8 +78,8 @@ h3{
 
 }
 
-.colorHtml{
-  background-color: var(--colorHtml);
+.colorHTML{
+  background-color: var(--colorHTML);
   color: var(--white);
 }
 .colorCSS{
