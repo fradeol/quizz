@@ -73,6 +73,8 @@ h3{
   --backgroundStart: var(--darkGray)
   --backgroundHeader: var(--gray);
   --textButton: var(--white);
+  --backgroundInput: var(--gray);
+  --backgroundButton: var(--crazyQuizOrange);
 
 }
 
