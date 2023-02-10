@@ -13,9 +13,13 @@
 
   /* Couleurs des catégories du Quiz */
   --colorHTML: #e44d26;
+  --colorHTMLHover: #a8381d;
   --colorCSS: #264de4;
+  --colorCSSHover: #172f8f;
   --colorJS: #f7e018;
+  --colorJSHover: #b7a611;
   --colorReact:#61dbfb;
+  --colorReactHover:#4097ac;
 
   /* Text */
 
@@ -92,20 +96,35 @@ h3{
   background-color: var(--colorHTML);
   color: var(--white);
 }
+
+.colorHTML:hover{
+  background-color: var(--colorHTMLHover);
+}
 .colorCSS{
-  /* hover ??? */
   background-color: var(--colorCSS);
   color: var(--white);
 }
+
+.colorCSS:hover{
+  background-color: var(--colorCSSHover);
+}
+
 .colorJS{
-  /* hover ??? */
   background-color: var(--colorJS);
   color: var(--black);
 }
+
+.colorJS:hover{
+  background-color: var(--colorJSHover);
+}
+
 .colorReact{
-  /* hover ??? */
   background-color: var(--colorReact);
   color: var(--black);
+}
+
+.colorReact:hover{
+  background-color: var(--colorReactHover);
 }
 
 body{
