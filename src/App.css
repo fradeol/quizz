@@ -109,20 +109,20 @@ h3{
 
 .colorJS{
   background-color: var(--colorJS);
-  color: var(--black);
 }
 
 .colorJS:hover{
   background-color: var(--colorJSHover);
+  color: var(--white);
 }
 
 .colorReact{
   background-color: var(--colorReact);
-  color: var(--black);
 }
 
 .colorReact:hover{
   background-color: var(--colorReactHover);
+  color: var(--white);
 }
 
 body{
