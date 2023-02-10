@@ -26,7 +26,7 @@
   --text: var(--black);
   --title: var(--black);
   --textButton: var(--white);
-  --textInput: var(--black);
+  --textPlaceholder: var(--black);
 
   /* Background */ 
 
@@ -42,6 +42,8 @@
   /* Focus */
   --textInputFocus: var(--white);
   --backgroundInputFocus: var(--crazyQuizOrange);
+  --textPlaceholderFocus: var(--white);
+
 }
 
 *{
@@ -72,8 +74,9 @@ h3{
   padding: 40px;
 }
 
-p, a, label {
+p, a, label, input, button {
   font-size: 30px;
+  padding: 20px;
   color: var(--text);
 }
 
@@ -93,6 +96,29 @@ h3{
 button{
   cursor: pointer;
   border: none;
+  color: var(--textButton);
+  background-color: var(--backgroundButton);
+  border-radius: 10px;
+}
+
+button:hover{
+  background-color: var(--backgroundButtonHover);
+}
+
+input{
+  background-color: var(--backgroundInput);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+
+input::placeholder{
+  color:var(--textPlaceholder)
+}
+
+input:focus{
+  background-color: var(--backgroundInputFocus);
+  color: var(--textInputFocus);
 }
 
 .HTMLButtonColor{
@@ -133,7 +159,7 @@ button{
 }
 
 body{
-  background-color: var(--gray);
+  background-color: violet;
 }
 
 img{
