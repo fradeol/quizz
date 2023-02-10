@@ -61,7 +61,6 @@ h1{
 
 h2, h3, p, a, label {
   font-family: 'Overlock', cursive;
-  color: var(--text);
 }
 
 h2{
@@ -92,7 +91,6 @@ h3{
 }
 
 .colorHTML{
-  /* hover ??? */
   background-color: var(--colorHTML);
   color: var(--white);
 }
