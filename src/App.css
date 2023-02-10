@@ -35,8 +35,6 @@
   --backgroundButtonHover: ???? ;
 }
 
-/* Titres et texte */
-
 *{
   margin: 0;
   padding: 0;
@@ -83,9 +81,6 @@ h3{
   font-size: 30px;
   margin: 20px;
 }
-
-
-
 
 .colorHTML{
   /* hover ??? */
