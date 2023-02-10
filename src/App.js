@@ -24,13 +24,13 @@ function App() {
         eum sequi hic veritatis officia debitis, cupiditate sed magnam?
       </p>
       <img src={logoCrazyQuiz} alt="logo du site CrazyQuiz" />
-      <img src={logoCrazyQuizCat} alt="" />
-      <img src={logoTrophee} alt="" />
-      <img src={logoBrokenTrophee} alt="" />
-      <img src={logoHTMLBanner} alt="" />
-      <img src={logoCSSBanner} alt="" />
-      <img src={logoJSBanner} alt="" />
-      <img src={logoReactBanner} alt="" />
+      <img src={logoCrazyQuizCat} alt="logo de la mascotte CrazyQuizCat" />
+      <img src={logoTrophee} alt="logo d'un trophée" />
+      <img src={logoBrokenTrophee} alt="logo d'un trophée en noir et blanc brisé" />
+      <img src={logoHTMLBanner} alt="logo d'une bannière aux couleurs d'HTML" />
+      <img src={logoCSSBanner} alt="logo d'une bannière aux couleurs de CSS" />
+      <img src={logoJSBanner} alt="logo d'une bannière aux couleurs de JavaScript" />
+      <img src={logoReactBanner} alt="logo d'une bannière aux couleurs de React" />
 
       <button type='button' className='colorHTML'>
         <h2>HTML</h2>
@@ -43,7 +43,7 @@ function App() {
       <button type='button' className='colorJS'>
         <h2>JS</h2>
       </button>
-      
+
       <button type='button' className='colorReact'>
         <h2>React</h2>
       </button>
