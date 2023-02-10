@@ -32,19 +32,19 @@ function App() {
       <img src={logoJSBanner} alt="logo d'une bannière aux couleurs de JavaScript" />
       <img src={logoReactBanner} alt="logo d'une bannière aux couleurs de React" />
 
-      <button type='button' className='colorHTML'>
+      <button type='button' className='HTMLButtonColor'>
         <h2>HTML</h2>
       </button>
 
-      <button type='button' className='colorCSS'>
+      <button type='button' className='CSSButtonColor'>
         <h2>CSS</h2>
       </button>
 
-      <button type='button' className='colorJS'>
+      <button type='button' className='JSButtonColor'>
         <h2>JS</h2>
       </button>
 
-      <button type='button' className='colorReact'>
+      <button type='button' className='ReactButtonColor'>
         <h2>React</h2>
       </button>
 

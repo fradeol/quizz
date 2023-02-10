@@ -95,37 +95,39 @@ button{
   border: none;
 }
 
-.colorHTML{
+.HTMLButtonColor{
   background-color: var(--colorHTML);
   color: var(--white);
 }
 
-.colorHTML:hover{
+.HTMLButtonColor:hover{
   background-color: var(--colorHTMLHover);
 }
-.colorCSS{
+.CSSButtonColor{
   background-color: var(--colorCSS);
   color: var(--white);
 }
 
-.colorCSS:hover{
+.CSSButtonColor:hover{
   background-color: var(--colorCSSHover);
 }
 
-.colorJS{
+.JSButtonColor{
   background-color: var(--colorJS);
+  color: var(--text);
 }
 
-.colorJS:hover{
+.JSButtonColor:hover{
   background-color: var(--colorJSHover);
   color: var(--white);
 }
 
-.colorReact{
+.ReactButtonColor{
   background-color: var(--colorReact);
+  color: var(--text);
 }
 
-.colorReact:hover{
+.ReactButtonColor:hover{
   background-color: var(--colorReactHover);
   color: var(--white);
 }
