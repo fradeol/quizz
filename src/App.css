@@ -1,3 +1,40 @@
+/* Couleurs */
+
+:root{
+
+  /* Couleurs de base du site*/
+
+  --black:#000000;
+  --white:#ffffff;
+  --gray:#d9d9d9;
+  --darkGray:#656262;
+  --crazyQuizOrange:#ff9900;
+  --crazyQuizPurple:#9900ff;
+
+  /* Couleurs des catégories du Quiz */
+  --colorHTML: #e44d26;
+  --colorCSS: #264de4;
+  --colorJS: #f7e018;
+  --colorReact:#61dbfb;
+
+  /* Texte, Bordure et fond*/
+
+  --text: var(--black);
+  --title: var(--black);
+  --textButton: var(--white);
+  --textInput: ???;
+  --textInputFocus: ???;
+  --textHover: ???;
+  --backgroundHeader: var(--gray);
+  --backgroundButton: var(--crazyQuizOrange);
+  --backgroundStartQuiz: var(--darkGray)
+  --backgroundInput: var(--gray);
+  --backgroundInputFocus: ???;
+  
+  /* Hover */
+  --backgroundButtonHover: ???? ;
+}
+
 /* Titres et texte */
 
 *{
@@ -17,6 +54,7 @@ h1{
 
 h2, h3, p, a, label {
   font-family: 'Overlock', cursive;
+  color: var(--text);
 }
 
 h2{
@@ -47,50 +85,25 @@ h3{
 }
 
 
-/* Couleurs */
 
-:root{
-
-  /* Couleurs de base */
-
-  --black:#000000;
-  --white:#ffffff;
-  --gray:#d9d9d9;
-  --darkGray:#656262;
-  --crazyQuizOrange:#ff9900;
-  --crazyQuizPurple:#9900ff;
-
-  /* Couleurs des catégories */
-  --colorHTML: #e44d26;
-  --colorCSS: #264de4;
-  --colorJS: #f7e018;
-  --colorReact:#61dbfb;
-
-  /* Texte, Bordure et fond*/
-
-  --text: var(--black);
-  --title: var(--black);
-  --backgroundStart: var(--darkGray)
-  --backgroundHeader: var(--gray);
-  --textButton: var(--white);
-  --backgroundInput: var(--gray);
-  --backgroundButton: var(--crazyQuizOrange);
-
-}
 
 .colorHTML{
+  /* hover ??? */
   background-color: var(--colorHTML);
   color: var(--white);
 }
 .colorCSS{
+  /* hover ??? */
   background-color: var(--colorCSS);
   color: var(--white);
 }
 .colorJS{
+  /* hover ??? */
   background-color: var(--colorJS);
   color: var(--black);
 }
 .colorReact{
+  /* hover ??? */
   background-color: var(--colorReact);
   color: var(--black);
 }
