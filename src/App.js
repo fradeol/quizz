@@ -35,12 +35,15 @@ function App() {
       <button type='button' className='colorHTML'>
         <h2>HTML</h2>
       </button>
+
       <button type='button' className='colorCSS'>
         <h2>CSS</h2>
       </button>
+
       <button type='button' className='colorJS'>
         <h2>JS</h2>
       </button>
+      
       <button type='button' className='colorReact'>
         <h2>React</h2>
       </button>
