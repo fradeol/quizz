@@ -12,14 +12,14 @@
   --crazyQuizPurple:#9900ff;
 
   /* Couleurs des catégories du Quiz */
-  --colorHTML: #e44d26;
-  --colorHTMLHover: #a8381d;
-  --colorCSS: #264de4;
-  --colorCSSHover: #172f8f;
-  --colorJS: #f7e018;
-  --colorJSHover: #b7a611;
+  --colorHTML:#f16524;
+  --colorHTMLHover:#e44d26;
+  --colorCSS:#2965f1;
+  --colorCSSHover:#264de4;
+  --colorJS:#f2cd37;
+  --colorJSHover:#cfb02b;
   --colorReact:#61dbfb;
-  --colorReactHover:#4097ac;
+  --colorReactHover:#3a8397;
 
   /* Text */
 
@@ -110,6 +110,7 @@ input{
   outline: none;
   border: none;
   border-radius: 10px;
+  margin-top: 10px;
   width: 90%;
 }
 

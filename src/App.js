@@ -49,7 +49,7 @@ function App() {
       </button>
 
       <div>
-        <label htmlFor="e-mail">E-mail</label>
+        <label htmlFor="e-mail">Adresse e-mail</label>
         <input type="email" id="e-mail" placeholder="e-mail" />
       </div>
 
