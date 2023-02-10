@@ -18,8 +18,8 @@
   --colorCSSHover:#264de4;
   --colorJS:#f2cd37;
   --colorJSHover:#cfb02b;
-  --colorReact:#61dbfb;
-  --colorReactHover:#3a8397;
+  --colorReact:#4ad5ff;
+  --colorReactHover:#18bcee;
 
   /* Text */
 
@@ -151,7 +151,6 @@ input:focus{
 
 .JSButtonColor:hover{
   background-color: var(--colorJSHover);
-  color: var(--white);
 }
 
 .ReactButtonColor{
@@ -161,7 +160,6 @@ input:focus{
 
 .ReactButtonColor:hover{
   background-color: var(--colorReactHover);
-  color: var(--white);
 }
 
 body{
