@@ -48,6 +48,9 @@ function App() {
         <h2>React</h2>
       </button>
 
+      <label htmlFor="connexion">Connexion</label>
+      <input type="text" id="connexion" placeholder="connexion" />
+
     </main>
   );
 }
