@@ -1,38 +1,171 @@
-.App {
+/* Couleurs */
+
+:root{
+
+  /* Couleurs de base du site*/
+
+  --black:#000000;
+  --white:#ffffff;
+  --gray:#d9d9d9;
+  --darkGray:#656262;
+  --crazyQuizOrange:#ff9900;
+  --crazyQuizPurple:#9900ff;
+
+  /* Couleurs des catégories du Quiz */
+  --colorHTML:#f16524;
+  --colorHTMLHover:#e44d26;
+  --colorCSS:#2965f1;
+  --colorCSSHover:#264de4;
+  --colorJS:#f2cd37;
+  --colorJSHover:#cfb02b;
+  --colorReact:#4ad5ff;
+  --colorReactHover:#18bcee;
+
+  /* Text */
+
+  --text: var(--black);
+  --title: var(--black);
+  --textButton: var(--white);
+  --textPlaceholder: var(--black);
+
+  /* Background */ 
+
+  --backgroundHeader: var(--gray);
+  --backgroundButton: var(--crazyQuizOrange);
+  --backgroundInput: var(--gray);
+  --backgroundStartQuiz: var(--darkGray);
+
+  /* Hover */
+  --textHover: var(--crazyQuizPurple);
+  --backgroundButtonHover: var(--crazyQuizPurple) ;
+
+  /* Focus */
+  --textInputFocus: var(--white);
+  --backgroundInputFocus: var(--crazyQuizOrange);
+  --textPlaceholderFocus: var(--white);
+
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+h1{
+  font-size: 100px;
+  font-family: 'Bangers', cursive;
+  font-weight: lighter;
+  color: var(--title);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2, h3, p, a, label {
+  font-family: 'Overlock', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2{
+  font-size: 60px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3{
+  font-size: 40px;
+  padding: 40px;
+}
+
+p, a, label, input, button {
+  font-size: 30px;
+  padding: 20px;
+  color: var(--text);
+}
+
+main{
+  margin: auto;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 40px;
 }
 
-.App-link {
-  color: #61dafb;
+h3{
+  font-size: 30px;
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button{
+  cursor: pointer;
+  border: none;
+  color: var(--textButton);
+  background-color: var(--backgroundButton);
+  border-radius: 10px;
+}
+
+button:hover{
+  background-color: var(--backgroundButtonHover);
+}
+
+input{
+  background-color: var(--backgroundInput);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 90%;
+}
+
+label{
+  padding-left: 0;
+}
+
+input::placeholder{
+  color:var(--textPlaceholder)
+}
+
+input:focus{
+  background-color: var(--backgroundInputFocus);
+  color: var(--textInputFocus);
+}
+
+.HTMLButtonColor{
+  background-color: var(--colorHTML);
+  color: var(--white);
+}
+
+.HTMLButtonColor:hover{
+  background-color: var(--colorHTMLHover);
+}
+.CSSButtonColor{
+  background-color: var(--colorCSS);
+  color: var(--white);
+}
+
+.CSSButtonColor:hover{
+  background-color: var(--colorCSSHover);
+}
+
+.JSButtonColor{
+  background-color: var(--colorJS);
+  color: var(--text);
+}
+
+.JSButtonColor:hover{
+  background-color: var(--colorJSHover);
+}
+
+.ReactButtonColor{
+  background-color: var(--colorReact);
+  color: var(--text);
+}
+
+.ReactButtonColor:hover{
+  background-color: var(--colorReactHover);
+}
+
+body{
+  background-color: violet;
+}
+
+img{
+  width: 200px;
 }
