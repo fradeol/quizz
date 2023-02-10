@@ -32,18 +32,18 @@ function App() {
       <img src={logoJSBanner} alt="" />
       <img src={logoReactBanner} alt="" />
 
-      <article className='colorHTML'>
+      <button type='button' className='colorHTML'>
         <h2>HTML</h2>
-      </article>
-      <article className='colorCSS'>
+      </button>
+      <button type='button' className='colorCSS'>
         <h2>CSS</h2>
-      </article>
-      <article className='colorJS'>
+      </button>
+      <button type='button' className='colorJS'>
         <h2>JS</h2>
-      </article>
-      <article className='colorReact'>
+      </button>
+      <button type='button' className='colorReact'>
         <h2>React</h2>
-      </article>
+      </button>
 
     </main>
   );
