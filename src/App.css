@@ -94,6 +94,7 @@ button{
   cursor: pointer;
   border: none;
 }
+
 .colorHTML{
   background-color: var(--colorHTML);
   color: var(--white);
