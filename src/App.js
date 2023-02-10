@@ -48,11 +48,15 @@ function App() {
         <h2>React</h2>
       </button>
 
-      <label htmlFor="e-mail">E-mail</label>
-      <input type="email" id="e-mail" placeholder="e-mail" />
+      <div>
+        <label htmlFor="e-mail">E-mail</label>
+        <input type="email" id="e-mail" placeholder="e-mail" />
+      </div>
 
-      <label htmlFor="password">mot de passe</label>
-      <input type="password" id="password" placeholder="password" />
+      <div>
+        <label htmlFor="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="password" />
+      </div>
 
       <button type='button'>Commencer</button>
 

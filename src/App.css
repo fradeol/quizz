@@ -110,6 +110,11 @@ input{
   outline: none;
   border: none;
   border-radius: 10px;
+  width: 90%;
+}
+
+label{
+  padding-left: 0;
 }
 
 input::placeholder{
@@ -163,5 +168,5 @@ body{
 }
 
 img{
-  width: 500px;
+  width: 200px;
 }
