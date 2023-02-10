@@ -17,22 +17,27 @@
   --colorJS: #f7e018;
   --colorReact:#61dbfb;
 
-  /* Texte, Bordure et fond*/
+  /* Text */
 
   --text: var(--black);
   --title: var(--black);
   --textButton: var(--white);
-  --textInput: ???;
-  --textInputFocus: ???;
-  --textHover: ???;
+  --textInput: var(--black);
+
+  /* Background */ 
+
   --backgroundHeader: var(--gray);
   --backgroundButton: var(--crazyQuizOrange);
-  --backgroundStartQuiz: var(--darkGray)
   --backgroundInput: var(--gray);
-  --backgroundInputFocus: ???;
-  
+  --backgroundStartQuiz: var(--darkGray);
+
   /* Hover */
-  --backgroundButtonHover: ???? ;
+  --textHover: var(--crazyQuizPurple);
+  --backgroundButtonHover: var(--crazyQuizPurple) ;
+
+  /* Focus */
+  --textInputFocus: var(--white);
+  --backgroundInputFocus: var(--crazyQuizOrange);
 }
 
 *{
