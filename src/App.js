@@ -7,13 +7,17 @@ import logoHTMLBanner from "./img/logoHTMLBanner.svg";
 import logoCSSBanner from "./img/logoCSSBanner.svg";
 import logoJSBanner from "./img/logoJSBanner.svg";
 import logoReactBanner from "./img/logoReactBanner.svg";
-import Connexion from './pages/Connexion/Connexion';
-import Fetch from './components/quiz/Fetch';
+import Accueil from './pages/Accueil';
+import Inscription from './pages/Connexion/Inscription';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
 <main>
-  <Fetch/>
+  <Routes>
+ <Route path='/' element={<Accueil/>}></Route>
+ <Route path='/Inscription' element={<Inscription/>}></Route>
+  </Routes>
 </main>
     // Test c'est pas la page d'accueil
     // <main>

@@ -1,12 +1,15 @@
 import "./ConnexionInscription.css";
-import { Link } from "react-router-dom"
+import Header from "../../components/header/Header";
 
-export default function Connexion() {
+export default function Inscription() {
   return (
+    
     <main>
+        <Header/>
     <form action="">
       <fieldset>
-        <legend>Connexion</legend>
+        <legend>Inscription</legend>
+        <input type={"text"} placeholder="pseudo" />
         <input type={"email"} placeholder="adresse@mail.fr" />
         <input type={"password"} placeholder="mot de passe"/>
 
@@ -18,10 +21,9 @@ export default function Connexion() {
           <input type={"checkbox"} />
         </div>
 
-        <button>Se connecter</button>
+        <button>S'inscrire</button>
       </fieldset>
     </form>
-    <div className="inscrit"><Link to='/Inscription' >Pas encore inscrit ?</Link></div>
     </main>
   );
 }

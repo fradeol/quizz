@@ -1,0 +1,42 @@
+fieldset{
+    border: 3px solid black;
+    border-radius: 20px;
+    text-align: center;
+    column-gap: 30px;
+}
+
+legend{
+    display: block;
+    margin: auto;
+    padding: 0px 20px;
+}
+
+.label{
+    width: 100%;
+    display: flex;
+}
+.checkbox{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    margin-top: 30px;
+}
+.checkbox input{
+    margin: 0;
+    padding: 0;
+    width: 15px;
+}
+
+input::placeholder{
+    font-size: 20px;
+}
+
+.inscrit{
+    text-align: center;
+    margin-top: 20px;
+    
+}
+.inscrit a{
+   color: blue;
+   
+}

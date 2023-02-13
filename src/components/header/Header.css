@@ -1,0 +1,23 @@
+header{
+   
+}
+
+header .imgLogo{
+    display: flex;
+    justify-content: center;
+}
+
+header .imgLogo img{
+    width: 300px;
+}
+
+header .imgCat{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+header .imgCat img{
+    width: 100px;
+}
+
