@@ -162,9 +162,9 @@ input:focus{
   background-color: var(--colorReactHover);
 }
 
-body{
+/* body{
   background-color: violet;
-}
+} */
 
 img{
   width: 200px;

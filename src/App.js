@@ -7,13 +7,17 @@ import logoHTMLBanner from "./img/logoHTMLBanner.svg";
 import logoCSSBanner from "./img/logoCSSBanner.svg";
 import logoJSBanner from "./img/logoJSBanner.svg";
 import logoReactBanner from "./img/logoReactBanner.svg";
+import Fetch from './components/quiz/Fetch';
+import Resultat from './pages/Resultat';
 
 function App() {
   return (
 
     // Test c'est pas la page d'accueil
-    <main>
-      <h1>Quiz HTML</h1>
+    <div>
+      <Resultat/>
+      {/* <Fetch /> */}
+      {/* <h1>Quiz HTML</h1>
       <h2>Question 1</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -58,9 +62,9 @@ function App() {
         <input type="password" id="password" placeholder="password" />
       </div>
 
-      <button type='button'>Commencer</button>
+      <button type='button'>Commencer</button> */}
 
-    </main>
+    </div>
   );
 }
 
