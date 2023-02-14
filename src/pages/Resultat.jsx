@@ -11,7 +11,7 @@ export default function Resultat() {
     return (
         
         <div>
-            <header>
+            <header className="resultat">
                 <img className="logo" src={logoCrazyQuiz} alt="" />
                 <img className="profile" src={logoCrazyQuizCat} alt="" />
             </header>
