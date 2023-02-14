@@ -3,13 +3,10 @@ import Connexion from "./Connexion/Connexion";
 
 export default function Accueil() {
 
-return (
-    <main>
-<Header />
-<Connexion />
-</main>
-)
-
-
-
+    return (
+        <main>
+            <Header />
+            <Connexion />
+        </main>
+    )
 }
