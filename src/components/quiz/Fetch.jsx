@@ -5,49 +5,56 @@ import { useState, useEffect } from "react";
 export default function Fetch({}) {
     const [allQuestion, setAllQuestion] = useState([]);
     const [maSelection, setMaSelection] = useState([])
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
     // const [currentIndex, setCurrentIndex] = useState(0)
     // const [questionHTML, setQuestionHTML] = useState([])
    
     useEffect(() => {
-        fetch("http://localhost:8000/api/questions")
-        .then(response => response.json())
-        .then((data) => {
-            setAllQuestion(data);
-            // allQuestion.forEach((q) => { 
+        loadData()
+        // getData()
+        
+        // fetch("http://localhost:8000/api/questions")
+        // .then(response => response.json())
+        // .then(data => {
+        //    console.log(data)
+        //     // allQuestion.forEach((q) => { 
             
-            let limite = 0
-            let randTableau = []
-            while ( limite < 9) {
-                randTableau.push(allQuestion[limite])
-                limite++  
-            }    
-            setMaSelection(randTableau)        
-                
-            // })
+        //     let limite = 0
+        //     let randTableau = []
+        //     while ( limite < 10) {
+        //         randTableau.push(allQuestion[limite].question)
+        //         limite++  
+        //     }    
+        //     setMaSelection(randTableau)        
+           
+        // })
+    }, []);
+    // console.log(maSelection)
 
-            }
-        )
-    }, [])
-    console.log(maSelection)
+    const loadData = async () => {
+        await fetch("http://localhost:8000/api/questions")
+        .then(response => response.json())
+        .then(data => setAllQuestion(data))
+        
+        
 
-    // function random(max) {
-    //     return Math.floor(Math.random() * max);
-    // }
-    // console.log(random(5));
-    // let random;
-    // let idQuestions = [];
-    // let idPartie = [];
+    }
+
 
     return (
+        
         <div>
-            
-            <ul>
-                {maSelection.map((q, i) => {
+            {allQuestion.map(q => (
+                <div key={q.id}>{q.question}</div>
+            ))}
+            {/* <ul>
+                {maSelection.map((q) => {
                     return (
-                    <li key={i}>{q}</li>
+                    <li key={q.id}>{q.question}</li>
                     )
                 })}
-            </ul> 
+            </ul>  */}
             
             {/* {console.log(questionHTML)} */}
             {/* {quizQuestion.map((q)=>{
