@@ -1,7 +1,12 @@
 import "./ConnexionInscription.css";
 import { Link } from "react-router-dom"
+import { useState } from "react";
 
 export default function Connexion() {
+
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+
   return (
     <main>
     <form action="">
