@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+header .logo {
+    height: 50px;
+}
+
+header .profile {
+    height: 100px;
+}
+
+.result-content {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.result-content button {
+    margin-top: 20px;
+    width: 280px;
+}

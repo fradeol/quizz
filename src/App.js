@@ -10,6 +10,8 @@ import logoReactBanner from "./img/logoReactBanner.svg";
 import Accueil from './pages/Accueil';
 import Inscription from './pages/Connexion/Inscription';
 import { Route, Routes } from 'react-router-dom';
+import Fetch from './components/quiz/Fetch';
+import Resultat from './pages/Resultat';
 
 function App() {
   return (
@@ -39,6 +41,27 @@ function App() {
     //   <img src={logoCSSBanner} alt="logo d'une bannière aux couleurs de CSS" />
     //   <img src={logoJSBanner} alt="logo d'une bannière aux couleurs de JavaScript" />
     //   <img src={logoReactBanner} alt="logo d'une bannière aux couleurs de React" />
+    <div>
+      <Resultat/>
+      {/* <Fetch /> */}
+      {/* <h1>Quiz HTML</h1>
+      <h2>Question 1</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Iure, inventore nihil fuga at debitis reiciendis esse voluptate aliquam sit fugiat cupiditate, 
+        dolorem numquam veritatis incidunt, obcaecati quis dolore? Accusantium, optio!
+        Illum praesentium, maiores labore, quae veniam laudantium at obcaecati facilis voluptatem 
+        itaque rem fugiat! Consequuntur, fugiat. Repellat dolorem aperiam illo quas, 
+        eum sequi hic veritatis officia debitis, cupiditate sed magnam?
+      </p>
+      <img src={logoCrazyQuiz} alt="logo du site CrazyQuiz" />
+      <img src={logoCrazyQuizCat} alt="logo de la mascotte CrazyQuizCat" />
+      <img src={logoTrophee} alt="logo d'un trophée" />
+      <img src={logoBrokenTrophee} alt="logo d'un trophée en noir et blanc brisé" />
+      <img src={logoHTMLBanner} alt="logo d'une bannière aux couleurs d'HTML" />
+      <img src={logoCSSBanner} alt="logo d'une bannière aux couleurs de CSS" />
+      <img src={logoJSBanner} alt="logo d'une bannière aux couleurs de JavaScript" />
+      <img src={logoReactBanner} alt="logo d'une bannière aux couleurs de React" />
 
     //   <button type='button' className='HTMLButtonColor'>
     //     <h2>HTML</h2>
@@ -69,6 +92,9 @@ function App() {
     //   <button type='button'>Commencer</button>
 
     // </main>
+      <button type='button'>Commencer</button> */}
+
+    </div>
   );
 }
 

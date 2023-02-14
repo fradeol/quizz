@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 
 export default function Quiz() {
    
+    
 
-return(
-
-    <h1>Quiz</h1>
+    return(
+        <h1>Quiz</h1>
 
     
 
-)
-
-
-
+    )
 }
