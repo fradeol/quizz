@@ -1,89 +1,85 @@
-fieldset{
-    border: 3px solid black;
-    border-radius: 20px;
-    text-align: center;
-    column-gap: 30px;
+fieldset {
+  border: 3px solid black;
+  border-radius: 20px;
+  text-align: center;
+  column-gap: 30px;
 }
 
-legend{
-    display: block;
-    margin: auto;
-    padding: 0px 20px;
+legend {
+  display: block;
+  margin: auto;
+  padding: 0px 20px;
 }
 
-.label{
-    width: 100%;
-    display: flex;
+.label {
+  width: 100%;
+  display: flex;
 }
-.checkbox{
-    display: flex;
-    justify-content: center;
-    column-gap: 30px;
-    margin-top: 30px;
+.checkbox {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+  margin-top: 30px;
 }
-.checkbox input{
-    margin: 0;
-    padding: 0;
-    width: 15px;
-}
-
-input::placeholder{
-    font-size: 20px;
+.checkbox input {
+  margin: 0;
+  padding: 0;
+  width: 15px;
 }
 
-.inscrit{
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    
+input::placeholder {
+  font-size: 20px;
 }
-.inscrit a{
-   color: var(--crazyQuizPurple);
-   
+
+.inscrit {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.inscrit a {
+  color: var(--crazyQuizPurple);
 }
 
 .conteneurModal{
     position: absolute;
+    left: 8%;
     top: 15%;
-    width: 90%;
+    width: 80%;
     margin: auto;
     background-color: white;
+    border-radius: 20px;
+    padding: 10px;
 }
 
-.conteneurModal-Connexion{
+.red {
+  color: red;
+}
+
+.centre {
+  display: flex;
+  justify-content: center;
+}
+
+.centre img {
+  width: 90px;
+}
+
+.logoCat {
+  margin-right: 56px;
+}
+
+button.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 19%;
+  background-color: var(--crazyQuizPurple);
+}
+
+.overlay {
     position: absolute;
-    top: 17%;
-    width: 90%;
-    margin: auto;
-    background-color: white;
+    background-color: black;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
 }
-
-
-.red{
-    color: red;
-}
-
-.centre{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.centre img{
-    width: 90px;
-}
-
-.logoCat{
-    margin-right: 56px;
-}
-
-button.close{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 19%;
-background-color: var(--crazyQuizPurple)
-
-}
-
-
