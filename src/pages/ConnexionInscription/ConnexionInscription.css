@@ -34,9 +34,56 @@ input::placeholder{
 .inscrit{
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 10px;
     
 }
 .inscrit a{
-   color: blue;
+   color: var(--crazyQuizPurple);
    
 }
+
+.conteneurModal{
+    position: absolute;
+    top: 15%;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+}
+
+.conteneurModal-Connexion{
+    position: absolute;
+    top: 17%;
+    width: 90%;
+    margin: auto;
+    background-color: white;
+}
+
+
+.red{
+    color: red;
+}
+
+.centre{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.centre img{
+    width: 90px;
+}
+
+.logoCat{
+    margin-right: 56px;
+}
+
+button.close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 19%;
+background-color: var(--crazyQuizPurple)
+
+}
+
+

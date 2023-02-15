@@ -104,8 +104,8 @@ button{
   background-color: var(--backgroundButton);
   border-radius: 10px;
   font-family: 'Bangers', cursive;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 70%;
 }
 

@@ -6,7 +6,7 @@ import SignUpModal from './context/UserContext'
 function App() {
   return (
     <div className="App">
-      
+      {/* <Fetch/> */}
       <Router />
     </div>
   );

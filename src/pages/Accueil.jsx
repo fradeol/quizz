@@ -1,14 +1,22 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/header/Header";
+import { UserContext } from "../context/UserContext";
+import Inscription from "./ConnexionInscription/Inscription";
+import Connexion from "./ConnexionInscription/Connexion"
 
 export default function Accueil() {
 
+    const {toggleModals} = useContext(UserContext)
+
     return (
         <main>
+            <Inscription/>
+            <Connexion/>
             <Header />
             <Link to='/Categories' ><button>Categories</button></Link>
-            <Link to='/Connexion' ><button>Se connecter</button></Link>
-            <Link to='/Inscription' ><button>S'inscrire</button></Link>
+            <a ><button onClick={() => toggleModals('signIn') }>Se connecter</button></a>
+            <a ><button onClick={() => toggleModals('signUp') }>S'inscrire</button></a>
         </main>
     )
 }
