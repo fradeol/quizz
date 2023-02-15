@@ -10,8 +10,6 @@ export default function Inscription() {
 
   const inputs = useRef([]);
 
- 
-
   const addInputs = (element) => {
     if (element && !inputs.current.includes(element)) {
       inputs.current.push(element);
@@ -27,9 +25,10 @@ export default function Inscription() {
 
       setValidation(" 8 caractères minimum");
       return;
+      
     } else if (inputs.current[1].value !== inputs.current[2].value) {
 
-      setValidation("les mots de passe ne corresponde pas")
+      setValidation("les mots de passe ne correspondent pas")
       return;
     }
 
@@ -80,7 +79,7 @@ export default function Inscription() {
                   ref={addInputs}               
                   type={"password"}
                   placeholder="mot de passe"
-                  name="pwd"
+                  name="password"
                   id="password"
                   required
                 />

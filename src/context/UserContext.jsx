@@ -18,7 +18,7 @@ export function UserContextProvider(props) {
     signInModal: false,
   });
 
-  const signUp = (email, pwd) => createUserWithEmailAndPassword(auth, email, pwd);
+  const signUp = (email, password) => createUserWithEmailAndPassword(auth, email, password);
 
 
   
