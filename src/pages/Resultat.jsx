@@ -5,7 +5,7 @@ import '../styles/Resultat.css';
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 
 export default function Resultat() {
-    let isWon= false;
+    let isWon= true;
 
 
     return (
