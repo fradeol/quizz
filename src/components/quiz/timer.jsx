@@ -16,7 +16,7 @@ export default function Timer() {
             setSeconds( seconds - 1 );
         }
             }, 1000)
-            return () => clearInterval(timer)
+            return () => clearInterval(timer)  
         })
         
     return (
