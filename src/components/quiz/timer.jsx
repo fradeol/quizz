@@ -20,9 +20,9 @@ export default function Timer() {
         })
         
     return (
-        <div className="conteneurTimer">
-            <div className="timer"><lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"  background="transparent"  speed="0.8" loop  autoplay></lottie-player></div>
-            <span>{seconds}</span>
+        <div>
+            <div><lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"  background="transparent"  speed="0.8" loop  autoplay></lottie-player></div>
+            <h1>{seconds}</h1>
         </div>
     )
 }
