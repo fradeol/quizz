@@ -7,10 +7,9 @@ import axios from "axios";
 export default function Quiz() {
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(true)
-    // const [indexAnswer, setIndexAnswer] = useState([0])
-    // const [maSelection, setMaSelection] = useState([])
-    // const [currentIndex, setCurrentIndex] = useState(0)
-    // const [questionHTML, setQuestionHTML] = useState([])
+    const [actualQuestion, setActualQuestion] = useState(0)
+    const [reponses, setReponses] = useState([])
+    const [first, setFirst] = useState(false)
     
     const API_URL = "http://localhost:8000/api/questions"
 
@@ -31,51 +30,72 @@ export default function Quiz() {
         questionFiltered.sort((a, b) => Math.random() - 0.5);
         setQuestions(questionFiltered)
         setLoading(false)
-        console.log(questionFiltered)
-        
-        
+        // console.log(questionFiltered)
         })
     }
 
     useEffect(() => {
         loadData()
     }, []);
-    // let goodAnswer = questions[0].reponse1
-    // const mixedQuestion = []
-    const wrongAnswers = {
-        reponse2: questions[0].reponse2,
-        reponse3: questions[0].reponse3,
-        reponse4: questions[0].reponse4,
-        reponse5: questions[0].reponse5,
-        reponse6: questions[0].reponse6,
-        reponse7: questions[0].reponse7,
-        reponse8: questions[0].reponse8,
-        reponse9: questions[0].reponse9,
-        reponse10: questions[0].reponse10
+
+    function change() {
+        setActualQuestion(actualQuestion + 1)
     }
-    console.log(wrongAnswers);
-    // wrongAnswers.forEach(answer => {
-    //     mixedQuestion.push(answer)
-    // });
-    // console.log(mixedQuestion);
+
+    if (!loading) {
+        if (!first) {
+            let reponseData = [
+            // questions[actualQuestion].reponse1,
+                questions[actualQuestion].reponse2,
+                questions[actualQuestion].reponse3,
+                questions[actualQuestion].reponse4,
+                questions[actualQuestion].reponse5,
+                questions[actualQuestion].reponse6,
+                questions[actualQuestion].reponse7,
+                questions[actualQuestion].reponse8,
+                questions[actualQuestion].reponse9,
+                questions[actualQuestion].reponse10,
+            ];
+            reponseData.sort((a, b) => Math.random() - 0.5);
+            reponseData = reponseData.slice(0, 3);
+            setReponses(reponseData);
+            reponseData.push(questions[actualQuestion].reponse1)
+            setReponses(reponseData)
+            reponseData.sort((a, b) => Math.random() - 0.5);
+            setReponses(reponseData)
+            setFirst(true);
+            
+        }
+    }
     if (loading) {
         return (
-            <div><lottie-player src="https://assets8.lottiefiles.com/packages/lf20_a2chheio.json"  background="transparent"  speed="1" loop  autoplay></lottie-player></div>
+            <div>
+                <lottie-player 
+                    src="https://assets8.lottiefiles.com/packages/lf20_a2chheio.json"  
+                    background="transparent"  
+                    speed="1" 
+                    loop  
+                    autoplay>
+                </lottie-player>
+            </div>
         )
     }
+            
+    console.log(reponses);    
     return(
         <main>
             <br />
-            {questions[0].question}
+            {questions[actualQuestion].question}
             {/* <ul>
                 {questions.map(q => (
                     <li key={q.id}>{q.question}</li>
                 ))}
             </ul> */}
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>4</button>
+            
+                <button onClick={change}>{reponses[0]}</button>
+                <button onClick={change}>{reponses[1]}</button>
+                <button onClick={change}>{reponses[2]}</button>
+                <button onClick={change}>{reponses[3]}</button>
 
             <Link to='/Resultat'><button>Resultats</button></Link>  
         </main>
