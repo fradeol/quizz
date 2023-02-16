@@ -1,8 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Accueil from '../pages/Accueil';
-import Inscription from '../pages/ConnexionInscription/Inscription';
-import Connexion from '../pages/ConnexionInscription/Connexion';
 import Categories from '../pages/Categories';
 import Resultat from '../pages/Resultat';
 import Quiz from '../pages/Quiz';

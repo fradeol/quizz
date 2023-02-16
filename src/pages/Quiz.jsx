@@ -7,6 +7,7 @@ import axios from "axios";
 export default function Quiz() {
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(true)
+    // const [indexAnswer, setIndexAnswer] = useState([0])
     // const [maSelection, setMaSelection] = useState([])
     // const [currentIndex, setCurrentIndex] = useState(0)
     // const [questionHTML, setQuestionHTML] = useState([])
@@ -31,13 +32,32 @@ export default function Quiz() {
         setQuestions(questionFiltered)
         setLoading(false)
         console.log(questionFiltered)
-        console.log(questions)})
+        
+        
+        })
     }
 
     useEffect(() => {
         loadData()
     }, []);
-
+    // let goodAnswer = questions[0].reponse1
+    // const mixedQuestion = []
+    const wrongAnswers = {
+        reponse2: questions[0].reponse2,
+        reponse3: questions[0].reponse3,
+        reponse4: questions[0].reponse4,
+        reponse5: questions[0].reponse5,
+        reponse6: questions[0].reponse6,
+        reponse7: questions[0].reponse7,
+        reponse8: questions[0].reponse8,
+        reponse9: questions[0].reponse9,
+        reponse10: questions[0].reponse10
+    }
+    console.log(wrongAnswers);
+    // wrongAnswers.forEach(answer => {
+    //     mixedQuestion.push(answer)
+    // });
+    // console.log(mixedQuestion);
     if (loading) {
         return (
             <div><lottie-player src="https://assets8.lottiefiles.com/packages/lf20_a2chheio.json"  background="transparent"  speed="1" loop  autoplay></lottie-player></div>
@@ -45,7 +65,8 @@ export default function Quiz() {
     }
     return(
         <main>
-            {questions[1].question}
+            <br />
+            {questions[0].question}
             {/* <ul>
                 {questions.map(q => (
                     <li key={q.id}>{q.question}</li>

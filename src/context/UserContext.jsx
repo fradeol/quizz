@@ -1,9 +1,11 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, 
+  // useEffect
+ } from "react";
 
 import {
-  signInWidthEmailAndPassword,
+  // signInWidthEmailAndPassword,
   createUserWithEmailAndPassword,
-  onAuthStateChanged
+  // onAuthStateChanged
 } from "firebase/auth"
 import {auth} from "../firebase-config"
 
@@ -11,8 +13,8 @@ export const UserContext = createContext();
 
 export function UserContextProvider(props) {
 
-  const [currentUser, setCurrentUser] = useState();
-  const [loadingData, setLoadingData] = useState(true)
+  // const [currentUser, setCurrentUser] = useState();
+  // const [loadingData, setLoadingData] = useState(true)
   const [modalState, setModalState] = useState({
     signUpModal: false,
     signInModal: false,
