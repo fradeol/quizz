@@ -10,6 +10,11 @@ export default function Inscription() {
 
   const inputs = useRef([]);
 
+  const closeModal = () => {
+    setValidation("")
+    toggleModals("close")
+  }
+
   const addInputs = (element) => {
     if (element && !inputs.current.includes(element)) {
       inputs.current.push(element);
@@ -41,8 +46,16 @@ export default function Inscription() {
       setValidation("")
       
     } catch (error) {
+        // retourn catch si ça fail
+        if (error.code === "auth/invali-email"){
+          setValidation("Le format d'e-mail est incorrect")
+        }
+        else if (error.code === "auth/email-already-in-use"){
+          setValidation("L'e-mail est déjà utilisé")
+        }
+      }
     }
-  }
+  
 
   return (
     <>
@@ -50,10 +63,10 @@ export default function Inscription() {
         <div>
           <div 
           className="overlay"
-          onClick={() => toggleModals("close")}></div>
+          onClick={closeModal}></div>
           <div className="conteneurModal">
             <div className="centre">
-              <button className="close" onClick={() => toggleModals("close")}>
+              <button className="close" onClick={closeModal}>
                 {" "}
                 <RxCross1 />
               </button>
