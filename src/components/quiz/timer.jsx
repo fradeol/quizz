@@ -22,7 +22,6 @@ export default function Timer() {
     return (
         <div>
             <div><lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"  background="transparent"  speed="0.8" loop  autoplay></lottie-player></div>
-            
             <h1>{seconds}</h1>
         </div>
     )
