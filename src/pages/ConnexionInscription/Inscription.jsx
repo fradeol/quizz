@@ -10,8 +10,6 @@ export default function Inscription() {
 
   const inputs = useRef([]);
 
- 
-
   const addInputs = (element) => {
     if (element && !inputs.current.includes(element)) {
       inputs.current.push(element);
