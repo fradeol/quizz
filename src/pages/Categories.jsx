@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 import '../styles/Categories.css'
 
 export default function Categories() {
-    const categorie = ["HTML", "CSS", "JAVASCRIPT", "REACT"]
+    const categorie = ["HTML", "CSS", "JavaScript", "React"]
     return(
         <div className="cate">
             <Header/>

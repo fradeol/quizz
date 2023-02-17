@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import Inscription from "../components/ConnexionInscription/Inscription";
+import Connexion from "../components/ConnexionInscription/Connexion";
 import Header from "../components/header/Header";
 import { UserContext } from "../context/UserContext";
 import Inscription from "./ConnexionInscription/Inscription";

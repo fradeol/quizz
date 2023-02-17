@@ -24,7 +24,7 @@ export default function Fetch() {
             let randTableau = []
             while ( limite < 10) {
                 randTableau.push(data[limite].question)
-                limite++  
+                limite++
             }    
 
             setMaSelection(randTableau)        
