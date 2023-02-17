@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom";
+import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
+import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
+import logoTrophee from "../img/logoTrophee.png";
+import "../styles/Resultat.css";
+import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -9,6 +14,8 @@ export default function Quiz() {
   const [actualQuestion, setActualQuestion] = useState(0);
   const [responses, setReponses] = useState([]);
   const [first, setFirst] = useState(false);
+  const [score, setScore] = useState(0);
+  
   // const [maSelection, setMaSelection] = useState([])
   // const [currentIndex, setCurrentIndex] = useState(0)
   // const [questionHTML, setQuestionHTML] = useState([])
@@ -24,7 +31,7 @@ export default function Quiz() {
       let questionsData = response.data;
       let compteur = 0;
       questionsData.forEach((question) => {
-        if (question.categorie === quizParam && compteur < 10) {
+        if (question.categorie === quizParam && compteur < 11) {
           questionFiltered.push(question);
           compteur++;
         }
@@ -40,33 +47,44 @@ export default function Quiz() {
     loadData();
   }, []);
 
-  function change() {
+  useEffect(() => {
+    if (!loading) {
+      let reponseData = [
+        questions[actualQuestion].reponse2,
+        questions[actualQuestion].reponse3,
+        questions[actualQuestion].reponse4,
+        questions[actualQuestion].reponse5,
+        questions[actualQuestion].reponse6,
+        questions[actualQuestion].reponse7,
+        questions[actualQuestion].reponse8,
+        questions[actualQuestion].reponse9,
+        questions[actualQuestion].reponse10,
+      ];
+      reponseData.sort((a, b) => Math.random() - 0.5);
+      reponseData = reponseData.slice(0, 3);
+      reponseData.push(questions[actualQuestion].reponse1);
+      reponseData.sort((a, b) => Math.random() - 0.5);
+      setReponses(reponseData);
+    }
+  }, [actualQuestion, questions]);
+
+  // function change() {
+  //   setActualQuestion(actualQuestion + 1);
+  //   refresh();
+  //   console.log(responses);
+  //   console.log(score);
+  // }
+
+  function good() {
+    setScore(score + 1);
     setActualQuestion(actualQuestion + 1);
   }
 
-  if (!loading) {
-    if (!first) {
-    let reponseData = [
-      // questions[actualQuestion].reponse1,
-      questions[actualQuestion].reponse2,
-      questions[actualQuestion].reponse3,
-      questions[actualQuestion].reponse4,
-      questions[actualQuestion].reponse5,
-      questions[actualQuestion].reponse6,
-      questions[actualQuestion].reponse7,
-      questions[actualQuestion].reponse8,
-      questions[actualQuestion].reponse9,
-      questions[actualQuestion].reponse10,
-    ];
-    reponseData.sort((a, b) => Math.random() - 0.5);
-    reponseData = reponseData.slice(0, 3);
-    setReponses(reponseData);
-    console.log(reponseData);
-    setFirst(true);
-  }
+  function wrong() {
+    setActualQuestion(actualQuestion + 1);
   }
 
-  
+  const categorie = ["HTML", "CSS", "JavaScript", "React"]
 
   if (loading) {
     return (
@@ -81,26 +99,60 @@ export default function Quiz() {
       </div>
     );
   }
-  return (
-    <main>
-      <h1>{questions[actualQuestion].question}</h1>
-      {/* <ul>
-                {questions.map(q => (
-                    <li key={q.id}>{q.question}</li>
-                ))}
-            </ul> */}
-      {responses.map((q) => (
-        <div>
-          <button onClick={change}>{responses}</button>
-          <button onClick={change}>2</button>
-          <button onClick={change}>3</button>
-          <button onClick={change}>4</button>
-        </div>
-      ))}
+  function renderQuestion() {
+    const goodAnwser = questions[actualQuestion].reponse1;
+    return (
+      <main>
+        <h1>{questions[actualQuestion].question}</h1>
+        {responses.map((q, i) => {
+          if (q === goodAnwser) {
+            return (
+              <button key={i} onClick={good}>
+                good{q}
+              </button>
+            );
+          } else {
+            return (
+              <button key={i} onClick={wrong}>
+                {q}
+              </button>
+            );
+          }
+        })}
 
-      <Link to="/Resultat">
-        <button>Resultats</button>
-      </Link>
-    </main>
-  );
+        {/* <Link to="/Resultat">
+          <button>Resultats</button>
+        </Link> */}
+      </main>
+    );
+  }
+  function renderEnd() {
+    return (
+      <div>
+        <header className="resultat">
+          <img className="logo" src={logoCrazyQuiz} alt="" />
+          <img className="profile" src={logoCrazyQuizCat} alt="" />
+        </header>
+        <div className="result-content">
+          {score >= 5 ? (
+            <div>
+              <img src={logoTrophee} alt="" />
+              <p>
+                Féliciation vous avez la moyenne ! Votre score est de : {score}
+              </p>
+            </div>
+          ) : (
+            <div>
+              <img src={logoBrokenTrophee} alt="" />
+              <p>Dommage, vous êtes mauvais. Votre score est de : {score}</p>
+            </div>
+          )}
+
+          <Link to={`/Quiz/${categorie[0]}`}><button>Recommencer</button></Link>
+          <Link to="/categories"><button>Categories</button></Link>
+        </div>
+      </div>
+    );
+  }
+  return actualQuestion < 10 ? renderQuestion() : renderEnd();
 }

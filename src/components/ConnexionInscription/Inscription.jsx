@@ -2,6 +2,7 @@ import "./ConnexionInscription.css";
 import { UserContext } from "../../context/UserContext";
 import { useContext, useRef, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import { navigate, useNavigate } from "react-router-dom";
 
 export default function Inscription() {
   const { modalState, toggleModals, signUp } = useContext(UserContext);
@@ -9,6 +10,8 @@ export default function Inscription() {
   const [validation, setValidation] = useState("");
 
   const inputs = useRef([]);
+
+  const navigate = useNavigate();
 
   const closeModal = () => {
     setValidation("")
@@ -38,12 +41,14 @@ export default function Inscription() {
     }
 
     try {
-      const credential = await signUp(
+       await signUp(
         inputs.current[0].value,
         inputs.current[1].value
       );
       formRef.current.reset();
       setValidation("")
+      toggleModals("close")
+      navigate("/Private/Home")
       
     } catch (error) {
         // retourn catch si ça fail
@@ -74,12 +79,6 @@ export default function Inscription() {
             <form ref={formRef} onSubmit={handleForm}>
               <fieldset>
                 <legend>Inscription</legend>
-                {/* <input
-            type={"text"}
-            placeholder="pseudo"
-            name="pseudo"
-            id="pseudo"
-            required/> */}
                 <input
                   ref={addInputs}               
                   type={"email"}

@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       {/* <Fetch/> */}
-      <Timer/>
+      {/* <Timer/> */}
       <Router />
     </div>
   );

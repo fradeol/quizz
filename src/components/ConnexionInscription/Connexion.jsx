@@ -1,14 +1,47 @@
 import "./ConnexionInscription.css";
-import { Link } from "react-router-dom";
 import { UserContext } from "../../context/UserContext";
 import { useContext, useRef, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Connexion() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const { modalState, toggleModals, signIn } = useContext(UserContext);
 
-  const { modalState, toggleModals } = useContext(UserContext);
+  const [validation, setValidation] = useState("");
+  const navigate = useNavigate();
+
+  const inputs = useRef([]);
+
+  const closeModal = () => {
+    setValidation("")
+    toggleModals("close")
+  }
+
+  const addInputs = (element) => {
+    if (element && !inputs.current.includes(element)) {
+      inputs.current.push(element);
+    }
+  };
+
+  const formRef = useRef();
+
+  const handleForm = async (element) => {
+    element.preventDefault();
+
+    try {
+       await signIn(
+        inputs.current[0].value,
+        inputs.current[1].value
+      );
+      setValidation("");
+      toggleModals("close")
+      navigate ("/Private/Home")
+      
+    } catch (error) {
+       setValidation("L'email ou le mot de passe n'est pas le bon")
+        }
+      }
+    
 
   return (
     <>
@@ -16,21 +49,21 @@ export default function Connexion() {
         <div>
           <div 
           className="overlay"
-          onClick={() => toggleModals("close")}></div>
+          onClick={closeModal}></div>
           <div className="conteneurModal">
-            <form action="">
             <div className="centre">
-              <button className="close" onClick={() => toggleModals("close")}>
+              <button className="close" onClick={closeModal}>
                 {" "}
                 <RxCross1 />
               </button>
             </div>
-              <fieldset>
+            <form ref={formRef} onSubmit={handleForm}>
+            <fieldset>
                 
                 <legend>Connexion</legend>
 
                 <input
-// AJOUTER UNE REF                
+                  ref={addInputs}             
                   type={"email"}
                   placeholder="adresse@mail.fr"
                   name="email"
@@ -39,19 +72,20 @@ export default function Connexion() {
                 />
 
                 <input
-// AJOUTER UNE REF                
+                  ref={addInputs}         
                   type={"password"}
                   placeholder="mot de passe"
                   name="password"
                   id="password"
                   required
                 />
+                <p className="red">{validation}</p>
                 <div className="checkbox">
                   <label htmlFor=""> Se souvenir de moi</label>
                   <input type={"checkbox"} />
                 </div>
 
-                <button type="submit">S'inscrire</button>
+                <button type="submit">se connecter</button>
 
                 <div className="inscrit">
                   <Link to="/Inscription">Pas encore inscrit ?</Link>
@@ -62,5 +96,8 @@ export default function Connexion() {
         </div>
       )}
     </>
-  );
+  )
 }
+
+
+
