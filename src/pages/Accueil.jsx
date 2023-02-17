@@ -4,8 +4,6 @@ import Inscription from "../components/ConnexionInscription/Inscription";
 import Connexion from "../components/ConnexionInscription/Connexion";
 import Header from "../components/header/Header";
 import { UserContext } from "../context/UserContext";
-import Inscription from "./ConnexionInscription/Inscription";
-import Connexion from "./ConnexionInscription/Connexion"
 import '../styles/Accueil.css'
 
 export default function Accueil() {
