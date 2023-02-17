@@ -4,6 +4,7 @@ import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
+import "../styles/Resultat.css";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -15,7 +16,8 @@ export default function Quiz() {
   const [responses, setReponses] = useState([]);
   const [first, setFirst] = useState(false);
   const [score, setScore] = useState(0);
-  
+  const [seconds, setSeconds] = useState(20);
+
   // const [maSelection, setMaSelection] = useState([])
   // const [currentIndex, setCurrentIndex] = useState(0)
   // const [questionHTML, setQuestionHTML] = useState([])
@@ -68,12 +70,21 @@ export default function Quiz() {
     }
   }, [actualQuestion, questions]);
 
-  // function change() {
-  //   setActualQuestion(actualQuestion + 1);
-  //   refresh();
-  //   console.log(responses);
-  //   console.log(score);
-  // }
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      } else if (seconds === 0) {
+        wrong();
+        setSeconds(20);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  });
+
+  function restart() {
+    renderQuestion();
+  }
 
   function good() {
     setScore(score + 1);
@@ -84,7 +95,7 @@ export default function Quiz() {
     setActualQuestion(actualQuestion + 1);
   }
 
-  const categorie = ["HTML", "CSS", "JavaScript", "React"]
+  const categorie = ["HTML", "CSS", "JavaScript", "React"];
 
   if (loading) {
     return (
@@ -99,11 +110,24 @@ export default function Quiz() {
       </div>
     );
   }
+
   function renderQuestion() {
     const goodAnwser = questions[actualQuestion].reponse1;
     return (
       <main>
         <h1>{questions[actualQuestion].question}</h1>
+        <div className="conteneurTimer">
+          <div className="timer">
+            <lottie-player
+              src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"
+              background="transparent"
+              speed="0.8"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
+          <span className="seconds">{seconds}</span>
+        </div>
         {responses.map((q, i) => {
           if (q === goodAnwser) {
             return (
@@ -148,8 +172,12 @@ export default function Quiz() {
             </div>
           )}
 
-          <Link to={`/Quiz/${categorie[0]}`}><button>Recommencer</button></Link>
-          <Link to="/categories"><button>Categories</button></Link>
+          <Link onClick={restart} to={`/Quiz/${categorie[2]}`}>
+            <button>Recommencer</button>
+          </Link>
+          <Link to="/categories">
+            <button>Categories</button>
+          </Link>
         </div>
       </div>
     );
