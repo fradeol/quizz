@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
 import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
@@ -14,9 +14,9 @@ export default function Quiz() {
   const [loading, setLoading] = useState(true);
   const [actualQuestion, setActualQuestion] = useState(0);
   const [responses, setReponses] = useState([]);
-  const [first, setFirst] = useState(false);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(20);
+
 
   // const [maSelection, setMaSelection] = useState([])
   // const [currentIndex, setCurrentIndex] = useState(0)
@@ -70,32 +70,41 @@ export default function Quiz() {
     }
   }, [actualQuestion, questions]);
 
+  let isFinish = false;
+
   useEffect(() => {
     const timer = setInterval(() => {
+      if (!isFinish) {
       if (seconds > 0) {
         setSeconds(seconds - 1);
       } else if (seconds === 0) {
         wrong();
-        setSeconds(20);
       }
+    }
     }, 1000);
     return () => clearInterval(timer);
   });
 
-  function restart() {
-    renderQuestion();
-  }
+
 
   function good() {
     setScore(score + 1);
     setActualQuestion(actualQuestion + 1);
+    setSeconds(20);
   }
 
   function wrong() {
     setActualQuestion(actualQuestion + 1);
+    setSeconds(20);
   }
 
-  const categorie = ["HTML", "CSS", "JavaScript", "React"];
+  function restart() {
+    setActualQuestion(0)
+    setScore(0)
+    setSeconds(20)
+    isFinish = false;
+  }
+
 
   if (loading) {
     return (
@@ -151,6 +160,7 @@ export default function Quiz() {
     );
   }
   function renderEnd() {
+    isFinish = true;
     return (
       <div>
         <header className="resultat">
@@ -172,9 +182,9 @@ export default function Quiz() {
             </div>
           )}
 
-          <Link onClick={restart} to={`/Quiz/${categorie[2]}`}>
-            <button>Recommencer</button>
-          </Link>
+       
+            <button onClick={restart}>Recommencer</button>
+        
           <Link to="/categories">
             <button>Categories</button>
           </Link>
