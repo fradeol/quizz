@@ -4,6 +4,7 @@ import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
+import "../styles/Resultat.css";
 
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -15,7 +16,8 @@ export default function Quiz() {
   const [responses, setReponses] = useState([]);
   const [first, setFirst] = useState(false);
   const [score, setScore] = useState(0);
-  
+  const [seconds, setSeconds] = useState(20);
+
   // const [maSelection, setMaSelection] = useState([])
   // const [currentIndex, setCurrentIndex] = useState(0)
   // const [questionHTML, setQuestionHTML] = useState([])
@@ -68,23 +70,21 @@ export default function Quiz() {
     }
   }, [actualQuestion, questions]);
 
-
-  const [seconds, setSeconds] = useState(20);
-  const [isActive, setIsActive] = useState(true);
-
-  function stop() {
-      setSeconds(0)
-  }
-
   useEffect(() => {
-const timer = setInterval(() => {
-  if(seconds > 0){
-      setSeconds( seconds - 1 );
+    const timer = setInterval(() => {
+      if (seconds > 0) {
+        setSeconds(seconds - 1);
+      } else if (seconds === 0) {
+        wrong();
+        setSeconds(20);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  });
+
+  function restart() {
+    renderQuestion();
   }
-      }, 1000)
-      return () => clearInterval(timer)  
-  })
-  
 
   function good() {
     setScore(score + 1);
@@ -95,7 +95,7 @@ const timer = setInterval(() => {
     setActualQuestion(actualQuestion + 1);
   }
 
-  const categorie = ["HTML", "CSS", "JavaScript", "React"]
+  const categorie = ["HTML", "CSS", "JavaScript", "React"];
 
   if (loading) {
     return (
@@ -110,15 +110,24 @@ const timer = setInterval(() => {
       </div>
     );
   }
+
   function renderQuestion() {
     const goodAnwser = questions[actualQuestion].reponse1;
     return (
       <main>
        
         <h1>{questions[actualQuestion].question}</h1>
-        <div className="containerTimer">
-            <div className="timer"><lottie-player src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"  background="transparent"  speed="0.8" loop  autoplay></lottie-player></div>
-            <h1>{seconds}</h1>
+        <div className="conteneurTimer">
+          <div className="timer">
+            <lottie-player
+              src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"
+              background="transparent"
+              speed="0.8"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
+          <span className="seconds">{seconds}</span>
         </div>
         {responses.map((q, i) => {
           if (q === goodAnwser) {
@@ -164,8 +173,12 @@ const timer = setInterval(() => {
             </div>
           )}
 
-          <Link to={`/Quiz/${categorie[0]}`}><button>Recommencer</button></Link>
-          <Link to="/categories"><button>Categories</button></Link>
+          <Link onClick={restart} to={`/Quiz/${categorie[2]}`}>
+            <button>Recommencer</button>
+          </Link>
+          <Link to="/categories">
+            <button>Categories</button>
+          </Link>
         </div>
       </div>
     );

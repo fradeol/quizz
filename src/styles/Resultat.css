@@ -22,3 +22,18 @@ header .profile {
     margin-top: 20px;
     width: 280px;
 }
+
+.conteneurTimer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.timer{
+    width: 80px;
+}
+
+span{
+    font-size: 50px;
+}
