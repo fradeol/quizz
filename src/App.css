@@ -52,7 +52,7 @@
   text-decoration: none;
   list-style: none;
 }
-
+/* 
 h1 , legend{
   font-size: 50px;
   font-family: 'Bangers', cursive;
@@ -165,10 +165,6 @@ input:focus{
   background-color: var(--colorReactHover);
 }
 
-/* body{
-  background-color: violet;
-} */
-
 img{
   width: 200px;
-}
+} */

@@ -1,0 +1,20 @@
+.btn-acc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acc button {
+    cursor: pointer;
+    border: none;
+    color: var(--textButton);
+    background-color: var(--backgroundButton);
+    border-radius: 10px;
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+    height: 100px;
+    
+}
