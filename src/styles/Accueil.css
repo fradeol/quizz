@@ -1,7 +1,15 @@
 .btn-acc {
-    display: flex;
+    
+    margin-top: 50px;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; */
+}
+
+.acc {
+    margin:auto;
+    text-align: center;
+    width: 80%;
 }
 
 .acc button {
@@ -9,12 +17,33 @@
     border: none;
     color: var(--textButton);
     background-color: var(--backgroundButton);
-    border-radius: 10px;
+    /* border-radius: 10px; */
     font-family: 'Bangers', cursive;
     font-size: 30px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 70%;
-    height: 100px;
-    
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px;
+    width: 100%;
+   /* height: 100px; */
 }
+
+.acc button:hover, .acc .btn-acc a:hover {
+    background-color: var(--backgroundButtonHover);
+}
+
+.acc .btn-acc a {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    color: var(--textButton);
+    background-color: var(--backgroundButton);
+    /* border-radius: 10px; */
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 25px;
+    /* width: 80%; */
+}
+

@@ -80,10 +80,10 @@ export default function Connexion() {
                   required
                 />
                 <p className="red">{validation}</p>
-                <div className="checkbox">
+                {/* <div className="checkbox">
                   <label htmlFor=""> Se souvenir de moi</label>
                   <input type={"checkbox"} />
-                </div>
+                </div> */}
 
                 <button type="submit">se connecter</button>
 

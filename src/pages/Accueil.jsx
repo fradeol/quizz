@@ -11,15 +11,18 @@ export default function Accueil() {
     const {toggleModals} = useContext(UserContext)
 
     return (
-        <main className="acc">
-            <Inscription/>
-            <Connexion/>
-            <Header />
-            <div className="btn-acc">
-                <Link to='/Categories' ><button>Categories</button></Link>
-                <button onClick={() => toggleModals('signIn') }>Se connecter</button>
-                <button onClick={() => toggleModals('signUp') }>S'inscrire</button>
-            </div>
-        </main>
+        
+            <main>
+                <Inscription/>
+                <Connexion/>
+                <div className="acc">
+                    <Header />
+                    <div className="btn-acc">
+                        <Link to='/Categories' >Categories</Link>
+                        <button onClick={() => toggleModals('signIn') }>Se connecter</button>
+                        <button onClick={() => toggleModals('signUp') }>S'inscrire</button>
+                    </div>
+                </div>
+            </main>
     )
 }
