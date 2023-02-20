@@ -2,14 +2,12 @@ import "./ConnexionInscription.css";
 import { UserContext } from "../../context/UserContext";
 import { useContext, useRef, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Inscription() {
   const { modalState, toggleModals, signUp } = useContext(UserContext);
 
   const [validation, setValidation] = useState("");
-
-  const inputs = useRef([]);
 
   const navigate = useNavigate();
 
@@ -18,23 +16,21 @@ export default function Inscription() {
     toggleModals("close")
   }
 
-  const addInputs = (element) => {
-    if (element && !inputs.current.includes(element)) {
-      inputs.current.push(element);
-    }
-  };
+  const signUpEmail = useRef();
+  const signUpPassword = useRef();
+  const signUpRepeatPassword = useRef();
 
   const formRef = useRef();
 
   const handleForm = async (element) => {
     element.preventDefault();
 
-    if ( (inputs.current[1].value.length || inputs.current[2].value.length) < 8) {
+    if ( (signUpPassword.current.value.length || signUpRepeatPassword.current.value.length) < 8) {
 
       setValidation(" 8 caractères minimum");
       return;
       
-    } else if (inputs.current[1].value !== inputs.current[2].value) {
+    } else if (signUpPassword.current.value !== signUpRepeatPassword.current.value) {
 
       setValidation("les mots de passe ne correspondent pas")
       return;
@@ -42,15 +38,17 @@ export default function Inscription() {
 
     try {
        await signUp(
-        inputs.current[0].value,
-        inputs.current[1].value
+        signUpEmail.current.value,
+        signUpPassword.current.value
       );
       formRef.current.reset();
       setValidation("")
       toggleModals("close")
       navigate("/Private/Home")
       
-    } catch (error) {
+    } 
+    
+    catch (error) {
         // retourn catch si ça fail
         if (error.code === "auth/invali-email"){
           setValidation("Le format d'e-mail est incorrect")
@@ -60,7 +58,6 @@ export default function Inscription() {
         }
       }
     }
-  
 
   return (
     <>
@@ -80,7 +77,7 @@ export default function Inscription() {
               <fieldset>
                 <legend>Inscription</legend>
                 <input
-                  ref={addInputs}               
+                  ref={signUpEmail}               
                   type={"email"}
                   placeholder="adresse@mail.fr"
                   name="email"
@@ -88,7 +85,7 @@ export default function Inscription() {
                   required
                 />
                 <input
-                  ref={addInputs}               
+                  ref={signUpPassword}               
                   type={"password"}
                   placeholder="mot de passe"
                   name="password"
@@ -97,7 +94,7 @@ export default function Inscription() {
                 />
 
                 <input
-                  ref={addInputs}               
+                  ref={signUpRepeatPassword}               
                   type={"password"}
                   placeholder="repeter mot de passe"
                   name="repeatPassword"
