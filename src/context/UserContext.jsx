@@ -9,6 +9,12 @@ import { auth } from "../firebase-config";
 
 export const UserContext = createContext();
 
+const CategorieTable = [ {class: "HTMLButtonColor", categorieQuiz: "HTML" },
+                      {class: "CSSButtonColor", categorieQuiz: "CSS" },
+                      {class: "JSButtonColor", categorieQuiz: "JavaScript" },
+                      {class: "ReactButtonColor", categorieQuiz: "React" } ]
+
+
 export function UserContextProvider(props) {
   const signUp = (email, password) =>
   createUserWithEmailAndPassword(auth, email, password);
@@ -56,7 +62,7 @@ export function UserContextProvider(props) {
   }, []);
 
   return (
-    <UserContext.Provider value={{ modalState, toggleModals, signUp, currentUser, signIn }}>
+    <UserContext.Provider value={{ modalState, toggleModals, signUp, currentUser, signIn, CategorieTable }}>
       {!loadingData && props.children}
     </UserContext.Provider>
   );

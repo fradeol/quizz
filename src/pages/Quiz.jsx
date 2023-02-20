@@ -5,30 +5,33 @@ import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import "../styles/Resultat.css";
+import { UserContext } from "../context/UserContext";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext,} from "react";
 import axios from "axios";
 
 export default function Quiz() {
+
+  const {CategorieTable} = useContext(UserContext);
+
+  
+
+
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [actualQuestion, setActualQuestion] = useState(0);
   const [responses, setReponses] = useState([]);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(20);
-
-
-  // const [maSelection, setMaSelection] = useState([])
-  // const [currentIndex, setCurrentIndex] = useState(0)
-  // const [questionHTML, setQuestionHTML] = useState([])
-
+  
   const API_URL = "http://localhost:8000/api/questions";
 
   let questionFiltered = [];
 
+  const url = new URL(window.location.href);
+  const quizParam = url.pathname.split("/")[2];
+
   async function loadData() {
-    const url = new URL(window.location.href);
-    const quizParam = url.pathname.split("/")[2];
     await axios(API_URL).then(function (response) {
       let questionsData = response.data;
       let compteur = 0;
@@ -41,7 +44,7 @@ export default function Quiz() {
       questionFiltered.sort((a, b) => Math.random() - 0.5);
       setQuestions(questionFiltered);
       setLoading(false);
-      console.log(questionFiltered);
+      // console.log(questionFiltered);
     });
   }
 
@@ -106,6 +109,7 @@ export default function Quiz() {
   }
 
 
+
   if (loading) {
     return (
       <div>
@@ -118,6 +122,14 @@ export default function Quiz() {
         ></lottie-player>
       </div>
     );
+  }
+let color;
+  for (let i = 0; i <= CategorieTable.length; i++) {
+      if (CategorieTable[i].categorieQuiz === quizParam) {
+         color = CategorieTable[i].class
+       console.log(color);
+       break;
+      } 
   }
 
   function renderQuestion() {
@@ -137,16 +149,16 @@ export default function Quiz() {
           </div>
           <span className="seconds">{seconds}</span>
         </div>
-        {responses.map((q, i) => {
+        {responses.map((q, j) => {
           if (q === goodAnwser) {
             return (
-              <button key={i} onClick={good}>
+              <button  key={j} className={color} onClick={good}>
                 good{q}
               </button>
             );
           } else {
             return (
-              <button key={i} onClick={wrong}>
+              <button key={j} className={color} onClick={wrong}>
                 {q}
               </button>
             );
