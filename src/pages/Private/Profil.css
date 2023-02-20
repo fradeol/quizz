@@ -1,18 +1,58 @@
-.profil {
-    background-color: aqua;
-}
 
-
-/* .courbe {
+.courbe {
     position: relative;
-    margin-top: 15vh;
-}
-.courbe::before,
-.courbe::after {
-    position: absolute;
+    background: #E7E7E7;
+    height: 50vh;
+  }
+  
+  .courbe::after {
     content: '';
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 85vh;
-    background:crimson;
-    border-radius: 50vw 50vw 0   0  ;
-} */
+    background: #fff;
+    height: 68%;
+  }
+
+  .profil .score img, .profil .score p {
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    border-radius: 0;
+    width: 25px;
+  }
+
+  .profil .score p {
+    top: 57px;
+    left: calc(50% - 5px);
+    width: 200px;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+  }
+
+  .profil img {
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid #E7E7E7;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: calc(50% - 50px);
+  }
+
+  .donneesUser {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    text-align: center;
+    
+  }
+  /* .donneesUser p {
+    
+    margin-top: -100px;
+    text-align: center;
+    padding: 30px;
+  } */
