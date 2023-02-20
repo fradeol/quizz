@@ -102,7 +102,6 @@ button{
   border: none;
   color: var(--textButton);
   background-color: var(--backgroundButton);
-  border-radius: 10px;
   font-family: 'Bangers', cursive;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -138,7 +137,7 @@ input:focus{
 /* CSS du quiz */
 
 .conteneurQuiz{
-  padding-top: 30px;
+  padding-top: 20px;
   width: 90%;
   margin: auto;
 }
@@ -148,7 +147,7 @@ input:focus{
   justify-content: center;
   align-items: center;
   column-gap: 30px;
-  padding-top: 25px;
+  padding-top: 20px;
 }
 
 .conteneurReponse{
@@ -156,6 +155,7 @@ input:focus{
   display: flex;
   flex-direction: column;
   row-gap: 25px;
+  
  
 }
 
@@ -164,6 +164,7 @@ input:focus{
   display: block;
   font-size: 20px;
   padding: 20px 10px;
+  border-radius: 10px;
   font-family: 'Overlock', cursive;
  
 }
@@ -204,4 +205,4 @@ input:focus{
 
 img{
   width: 200px;
-} */
+} 
