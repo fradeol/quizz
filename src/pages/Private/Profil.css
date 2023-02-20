@@ -1,8 +1,9 @@
-/* .profil {
-    background-color: #E7E7E7;
-} */
+.profil {
+    background-color: aqua;
+}
 
-.courbe {
+
+/* .courbe {
     position: relative;
     margin-top: 15vh;
 }
@@ -14,4 +15,4 @@
     height: 85vh;
     background:crimson;
     border-radius: 50vw 50vw 0   0  ;
-}
+} */
