@@ -75,6 +75,10 @@ input::placeholder {
   justify-content: center;
 }
 
+.center{
+  margin: auto;
+}
+
 .centre img {
   width: 90px;
 }

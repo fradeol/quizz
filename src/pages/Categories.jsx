@@ -1,17 +1,20 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/header/Header";
 import '../styles/Categories.css'
+import { UserContext } from "../context/UserContext";
 
 export default function Categories() {
-    const categorie = ["HTML", "CSS", "JAVASCRIPT", "REACT"]
+
+    const {CategorieTable} = useContext(UserContext);
     return(
         <div className="cate">
             <Header/>
-            <main className="main-cate">
-                <Link to={`/Quiz/${categorie[0]}`}><button className="HTMLButtonColor">{categorie[0]}</button></Link>
-                <Link to={`/Quiz/${categorie[1]}`}><button className="CSSButtonColor">{categorie[1]}</button></Link>
-                <Link to={`/Quiz/${categorie[2]}`}><button className="JSButtonColor">{categorie[2]}</button></Link>
-                <Link to={`/Quiz/${categorie[3]}`}><button className="ReactButtonColor">{categorie[3]}</button></Link>
+            <main>
+                <Link to={`/Quiz/${CategorieTable[0].categorieQuiz}`}><button className="HTMLButtonColor">{CategorieTable[0].categorieQuiz}</button></Link>
+                <Link to={`/Quiz/${CategorieTable[1].categorieQuiz}`}><button className="CSSButtonColor">{CategorieTable[1].categorieQuiz}</button></Link>
+                <Link to={`/Quiz/${CategorieTable[2].categorieQuiz}`}><button className="JSButtonColor">{CategorieTable[2].categorieQuiz}</button></Link>
+                <Link to={`/Quiz/${CategorieTable[3].categorieQuiz}`}><button className="ReactButtonColor">{CategorieTable[3].categorieQuiz}</button></Link>
             </main>
         </div>
         
