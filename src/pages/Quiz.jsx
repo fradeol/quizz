@@ -130,7 +130,7 @@ export default function Quiz() {
             <lottie-player
               src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"
               background="transparent"
-              speed="0.8"
+              speed="2"
               loop
               autoplay
             ></lottie-player>

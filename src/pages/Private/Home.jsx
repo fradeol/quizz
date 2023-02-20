@@ -15,6 +15,7 @@ export default function Home() {
             <Header />
             <Link to='/Categories' ><button>Categories</button></Link>
             <Link to='/Private/Profil' ><button>Votre Profil</button></Link>
+            <Link to='/Categories' ><button>Votre Score</button></Link>
             <LogOut/>
         </main>
     )
