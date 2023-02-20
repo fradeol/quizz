@@ -50,9 +50,9 @@ input::placeholder {
 .inscrit {
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
-.inscrit a {
+.inscrit p {
   color: var(--crazyQuizPurple);
 }
 
@@ -87,9 +87,19 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 19%;
+  width: 10%;
+  font-size: large;
+  font-weight: bold;
+  height: 40px;
   color: var(--crazyQuizPurple);
   background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+}
+
+.centre .close:hover {
+  background-color: var(--crazyQuizPurple);
+  color: var(--white);
 }
 
 .overlay {
@@ -99,3 +109,51 @@ input::placeholder {
     width: 100vw;
     height: 100vh;
 }
+
+#password {
+  margin-bottom: 30px;
+}
+
+#validation {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--crazyQuizOrange);
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#subscribe #password {
+  margin-bottom: 0;
+}
+
+#repeatPassword {
+  margin-bottom: 30px;
+}
+
+#subscribe #validation {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+  .conteneurModal{
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 60%; 
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+  @media (min-width: 1024px) {
+    .conteneurModal{
+      position: absolute;
+      left: 35%;
+      top: 15%;
+      width: 30%; 
+      background-color: white;
+      border-radius: 20px;
+      padding: 10px;
+    }
+  }

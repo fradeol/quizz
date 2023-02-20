@@ -42,6 +42,10 @@ export default function Connexion() {
         }
       }
     
+    function notSubscribedYet() {
+      toggleModals("close")
+      toggleModals("signUp")
+    }
 
   return (
     <>
@@ -85,10 +89,10 @@ export default function Connexion() {
                   <input type={"checkbox"} />
                 </div> */}
 
-                <button type="submit">se connecter</button>
+                <button id="validation" type="submit">Se Connecter</button>
 
                 <div className="inscrit">
-                  <Link to="/Inscription">Pas encore inscrit ?</Link>
+                  <p onClick={notSubscribedYet}>Pas encore inscrit ?</p>
                 </div>
               </fieldset>
             </form>

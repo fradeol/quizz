@@ -69,7 +69,7 @@ export default function Inscription() {
           <div 
           className="overlay"
           onClick={closeModal}></div>
-          <div className="conteneurModal">
+          <div className="conteneurModal" id="subscribe">
             <div className="centre">
               <button className="close" onClick={closeModal}>
                 {" "}
@@ -105,11 +105,8 @@ export default function Inscription() {
                   required
                 />
                 <p className="red">{validation}</p>
-                <div className="checkbox">
-                  <label htmlFor=""> Se souvenir de moi</label>
-                  <input type={"checkbox"} />
-                </div>
-                <button type="submit">S'inscrire</button>
+                
+                <button id="validation" type="submit">S'inscrire</button>
               </fieldset>
             </form>
           </div>

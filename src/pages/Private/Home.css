@@ -1,0 +1,38 @@
+.connectedBtn {
+    margin:auto;
+    text-align: center;
+    width: 80%;
+}
+
+.connectedBtn a {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    color: var(--textButton);
+    background-color: var(--backgroundButton);
+    /* border-radius: 10px; */
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 25px;
+}
+
+.connectedBtn a:hover, .connectedBtn button:hover {
+    background-color: var(--backgroundButtonHover);
+}
+
+.connectedBtn button {
+    cursor: pointer;
+    border: none;
+    color: var(--textButton);
+    background-color: var(--backgroundButton);
+    /* border-radius: 10px; */
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    /* margin-top: 50px; */
+    margin-bottom: 50px;
+    padding: 25px;
+    width: 100%;
+}
