@@ -1,0 +1,26 @@
+header .imgLogo{
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+}
+
+header .imgLogo img{
+    width: 300px;
+    
+}
+
+header .imgCat{
+    display: flex;
+    justify-content: center;
+}
+
+header .imgCat img{
+    width: 100px;
+}
+
+header {
+    
+    padding-top: 50px;
+    
+    
+}
