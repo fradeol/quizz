@@ -3,6 +3,7 @@ import { UserContext } from "../../context/UserContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
+import "../ConnexionInscription/ConnexionInscription.css"
 
 
 export default function LogOut() {
@@ -20,7 +21,7 @@ export default function LogOut() {
   };
 
   return (
-    <button onClick={logOut}>Se deconnecter</button>
+    <button className="center" onClick={logOut}>Se deconnecter</button>
   )
 
 

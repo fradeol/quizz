@@ -1,34 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
 import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import "../styles/Resultat.css";
+import { UserContext } from "../context/UserContext";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 export default function Quiz() {
+  const { CategorieTable } = useContext(UserContext);
+
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [actualQuestion, setActualQuestion] = useState(0);
   const [responses, setReponses] = useState([]);
-  const [first, setFirst] = useState(false);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(20);
-
-  // const [maSelection, setMaSelection] = useState([])
-  // const [currentIndex, setCurrentIndex] = useState(0)
-  // const [questionHTML, setQuestionHTML] = useState([])
 
   const API_URL = "http://localhost:8000/api/questions";
 
   let questionFiltered = [];
 
+  const url = new URL(window.location.href);
+  const quizParam = url.pathname.split("/")[2];
+
   async function loadData() {
-    const url = new URL(window.location.href);
-    const quizParam = url.pathname.split("/")[2];
     await axios(API_URL).then(function (response) {
       let questionsData = response.data;
       let compteur = 0;
@@ -41,7 +40,7 @@ export default function Quiz() {
       questionFiltered.sort((a, b) => Math.random() - 0.5);
       setQuestions(questionFiltered);
       setLoading(false);
-      console.log(questionFiltered);
+      // console.log(questionFiltered);
     });
   }
 
@@ -70,32 +69,38 @@ export default function Quiz() {
     }
   }, [actualQuestion, questions]);
 
+  let isFinish = false;
+
   useEffect(() => {
     const timer = setInterval(() => {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-      } else if (seconds === 0) {
-        wrong();
-        setSeconds(20);
+      if (!isFinish) {
+        if (seconds > 0) {
+          setSeconds(seconds - 1);
+        } else if (seconds === 0) {
+          wrong();
+        }
       }
     }, 1000);
     return () => clearInterval(timer);
   });
 
-  function restart() {
-    renderQuestion();
-  }
-
   function good() {
     setScore(score + 1);
     setActualQuestion(actualQuestion + 1);
+    setSeconds(20);
   }
 
   function wrong() {
     setActualQuestion(actualQuestion + 1);
+    setSeconds(20);
   }
 
-  const categorie = ["HTML", "CSS", "JavaScript", "React"];
+  function restart() {
+    setActualQuestion(0);
+    setScore(0);
+    setSeconds(20);
+    isFinish = false;
+  }
 
   if (loading) {
     return (
@@ -111,40 +116,49 @@ export default function Quiz() {
     );
   }
 
+  let color;
+  for (let i = 0; i <= CategorieTable.length; i++) {
+    if (CategorieTable[i].categorieQuiz === quizParam) {
+      color = CategorieTable[i].class;
+      console.log(color);
+      break;
+    }
+  }
+
   function renderQuestion() {
     const goodAnwser = questions[actualQuestion].reponse1;
     return (
-      <main>
-       
+      <main className="conteneurQuiz">
         <h1>{questions[actualQuestion].question}</h1>
         <div className="conteneurTimer">
           <div className="timer">
             <lottie-player
               src="https://assets9.lottiefiles.com/packages/lf20_9zrznuec.json"
               background="transparent"
-              speed="0.8"
+              speed="2"
               loop
               autoplay
             ></lottie-player>
           </div>
           <span className="seconds">{seconds}</span>
         </div>
-        {responses.map((q, i) => {
-          if (q === goodAnwser) {
-            return (
-              <button className="reponse" key={i} onClick={good}>
-              <p> good{q} </p>
-              </button>
-            );
-          } else {
-            return (
-              <button className="reponse" key={i} onClick={wrong}>
-                <p>{q} </p> 
-              </button>
-            );
-          }
-        })}
-
+        <div className="conteneurReponse">
+          {responses.map((q, j) => {
+            if (q === goodAnwser) {
+              return (
+                <button key={j} className={color} onClick={good}>
+                  {q}
+                </button>
+              );
+            } else {
+              return (
+                <button key={j} className={color} onClick={wrong}>
+                  {q}
+                </button>
+              );
+            }
+          })}
+        </div>
         {/* <Link to="/Resultat">
           <button>Resultats</button>
         </Link> */}
@@ -152,6 +166,7 @@ export default function Quiz() {
     );
   }
   function renderEnd() {
+    isFinish = true;
     return (
       <div>
         <header className="resultat">
@@ -173,9 +188,8 @@ export default function Quiz() {
             </div>
           )}
 
-          <Link onClick={restart} to={`/Quiz/${categorie[2]}`}>
-            <button>Recommencer</button>
-          </Link>
+          <button onClick={restart}>Recommencer</button>
+
           <Link to="/categories">
             <button>Categories</button>
           </Link>
