@@ -54,7 +54,7 @@
 }
 
 h1 , legend{
-  font-size: 50px;
+  font-size: 40px;
   font-family: 'Bangers', cursive;
   font-weight: lighter;
   color: var(--title);
@@ -74,7 +74,7 @@ h3{
   padding: 40px;
 }
 
-p, a, input, button {
+p, a, input {
   font-size: 30px;
   padding: 20px;
   color: var(--text);
@@ -88,6 +88,8 @@ main{
 
 a{
   text-align: center;
+  font-size: 30px;
+  padding: 10px;
 }
 h3{
   font-size: 30px;
@@ -105,6 +107,8 @@ button{
   margin-top: 10px;
   margin-bottom: 10px;
   width: 70%;
+  padding: 30px;
+  font-size: 30px;
 }
 
 button:hover{
@@ -130,6 +134,39 @@ input:focus{
   color: var(--textInputFocus);
 }
 
+
+/* CSS du quiz */
+
+.conteneurQuiz{
+  padding-top: 30px;
+  width: 90%;
+  margin: auto;
+}
+
+.conteneurTimer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 30px;
+  padding-top: 25px;
+}
+
+.conteneurReponse{
+  padding-top: 25px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+ 
+}
+
+.conteneurReponse button{
+  width: 100%;
+  display: block;
+  font-size: 20px;
+  padding: 20px 10px;
+  font-family: 'Overlock', cursive;
+ 
+}
 .HTMLButtonColor{
   background-color: var(--colorHTML);
   color: var(--white);

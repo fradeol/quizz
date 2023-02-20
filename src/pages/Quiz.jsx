@@ -7,15 +7,11 @@ import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import "../styles/Resultat.css";
 import { UserContext } from "../context/UserContext";
 
-import { useState, useEffect, useContext,} from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 export default function Quiz() {
-
-  const {CategorieTable} = useContext(UserContext);
-
-  
-
+  const { CategorieTable } = useContext(UserContext);
 
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +19,7 @@ export default function Quiz() {
   const [responses, setReponses] = useState([]);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(20);
-  
+
   const API_URL = "http://localhost:8000/api/questions";
 
   let questionFiltered = [];
@@ -78,17 +74,15 @@ export default function Quiz() {
   useEffect(() => {
     const timer = setInterval(() => {
       if (!isFinish) {
-      if (seconds > 0) {
-        setSeconds(seconds - 1);
-      } else if (seconds === 0) {
-        wrong();
+        if (seconds > 0) {
+          setSeconds(seconds - 1);
+        } else if (seconds === 0) {
+          wrong();
+        }
       }
-    }
     }, 1000);
     return () => clearInterval(timer);
   });
-
-
 
   function good() {
     setScore(score + 1);
@@ -102,13 +96,11 @@ export default function Quiz() {
   }
 
   function restart() {
-    setActualQuestion(0)
-    setScore(0)
-    setSeconds(20)
+    setActualQuestion(0);
+    setScore(0);
+    setSeconds(20);
     isFinish = false;
   }
-
-
 
   if (loading) {
     return (
@@ -123,19 +115,20 @@ export default function Quiz() {
       </div>
     );
   }
-let color;
+
+  let color;
   for (let i = 0; i <= CategorieTable.length; i++) {
-      if (CategorieTable[i].categorieQuiz === quizParam) {
-         color = CategorieTable[i].class
-       console.log(color);
-       break;
-      } 
+    if (CategorieTable[i].categorieQuiz === quizParam) {
+      color = CategorieTable[i].class;
+      console.log(color);
+      break;
+    }
   }
 
   function renderQuestion() {
     const goodAnwser = questions[actualQuestion].reponse1;
     return (
-      <main>
+      <main className="conteneurQuiz">
         <h1>{questions[actualQuestion].question}</h1>
         <div className="conteneurTimer">
           <div className="timer">
@@ -149,22 +142,23 @@ let color;
           </div>
           <span className="seconds">{seconds}</span>
         </div>
-        {responses.map((q, j) => {
-          if (q === goodAnwser) {
-            return (
-              <button  key={j} className={color} onClick={good}>
-                good{q}
-              </button>
-            );
-          } else {
-            return (
-              <button key={j} className={color} onClick={wrong}>
-                {q}
-              </button>
-            );
-          }
-        })}
-
+        <div className="conteneurReponse">
+          {responses.map((q, j) => {
+            if (q === goodAnwser) {
+              return (
+                <button key={j} className={color} onClick={good}>
+                  {q}
+                </button>
+              );
+            } else {
+              return (
+                <button key={j} className={color} onClick={wrong}>
+                  {q}
+                </button>
+              );
+            }
+          })}
+        </div>
         {/* <Link to="/Resultat">
           <button>Resultats</button>
         </Link> */}
@@ -194,9 +188,8 @@ let color;
             </div>
           )}
 
-       
-            <button onClick={restart}>Recommencer</button>
-        
+          <button onClick={restart}>Recommencer</button>
+
           <Link to="/categories">
             <button>Categories</button>
           </Link>
