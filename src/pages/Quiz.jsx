@@ -159,9 +159,6 @@ export default function Quiz() {
             }
           })}
         </div>
-        {/* <Link to="/Resultat">
-          <button>Resultats</button>
-        </Link> */}
       </main>
     );
   }

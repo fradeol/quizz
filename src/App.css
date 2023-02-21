@@ -202,6 +202,14 @@ input:focus{
   background-color: var(--colorReactHover);
 }
 
+.BannerColorWhite{
+ color: white;
+}
+
+.BannerColorBlack{
+  color: black;
+ }
+ 
 /* body{
   background-color: violet;
 } */
@@ -209,3 +217,57 @@ input:focus{
 img{
   width: 200px;
 }
+
+/* CSS PAGE START */
+
+.conteneurStart{
+  background-color: var(--backgroundStartQuiz);
+  height: 100vh;
+}
+
+.ImgLogoQuiz{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.ImgLogoQuiz img {
+  width: 280px;
+  object-fit: cover;
+  rotate: 2deg;
+}
+
+.ImgHTML{
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.ImgHTML span{
+  position: absolute;
+  padding-top: 18px;
+  /* color: white; */
+  font-size: 45px;
+  rotate: -5deg;
+  font-family: 'Bangers', cursive;
+  
+}
+
+.ImgHTML img{
+  width: 280px;
+}
+
+.pStart{
+  margin-top: 50px;
+  text-align: center;
+  color: white;
+}
+
+button.BtnStart{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  
+}
+
