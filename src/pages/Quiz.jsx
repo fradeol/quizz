@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
 import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
@@ -39,13 +39,12 @@ export default function Quiz() {
       questionFiltered.sort((a, b) => Math.random() - 0.5);
       setQuestions(questionFiltered);
       setLoading(false);
-      // console.log(questionFiltered);
     });
   }
 
   useEffect(() => {
     loadData();
-  }, []);
+  },);
 
   useEffect(() => {
     if (!loading) {
