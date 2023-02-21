@@ -45,14 +45,22 @@
 
   .donneesUser {
     position: absolute;
-    top: 35%;
-    left: 15%;
+    width: 110px;
+    top: 30vh;
+    left: calc(50vw - 55px);
     text-align: center;
-    
   }
-  /* .donneesUser p {
-    
-    margin-top: -100px;
-    text-align: center;
-    padding: 30px;
-  } */
+ 
+  .donneesUser p {
+    margin-bottom: 30px;
+  }
+
+  .profil .connectedBtn a {
+    margin-bottom: -30px;
+  }
+
+  .profil .connectedBtn {
+    margin-top: 200px;
+  }
+
+  

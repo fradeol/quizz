@@ -4,7 +4,6 @@ import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
-import "../styles/Resultat.css";
 import { UserContext } from "../context/UserContext";
 
 import { useState, useEffect, useContext } from "react";
@@ -104,7 +103,7 @@ export default function Quiz() {
 
   if (loading) {
     return (
-      <div>
+      <div className="loadGif">
         <lottie-player
           src="https://assets8.lottiefiles.com/packages/lf20_a2chheio.json"
           background="transparent"

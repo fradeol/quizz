@@ -17,6 +17,5 @@ export default function Categories() {
                 <Link to={`/Quiz/${CategorieTable[3].categorieQuiz}`}><button className="ReactButtonColor">{CategorieTable[3].categorieQuiz}</button></Link>
             </main>
         </div>
-        
     )
 }

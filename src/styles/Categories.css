@@ -1,15 +1,20 @@
-/* .main-cate {
-    margin-top: 75px;
-}*/
 
- .main-cate button {
-    
-    /* margin: -10px;  */
-    height: 110px;
-    width: 80vw;
-    border-radius: 0;
-} 
-/*
-.HTMLButtonColor{
-    border-top: solid black 3px;
-} */
+
+.cate main a button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: none;
+    color: var(--textButton);
+    padding: 25px;
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+}
+
+.cate main {
+    margin-top: 25px;
+}
