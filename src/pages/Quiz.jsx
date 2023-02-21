@@ -100,17 +100,18 @@ export default function Quiz() {
     setSeconds(20);
     isFinish = false;
   }
+  
 
   if (loading) {
+    
     return (
       <div className="loadGif">
-        <lottie-player
-          src="https://assets8.lottiefiles.com/packages/lf20_a2chheio.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-        ></lottie-player>
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json"  
+          background="transparent"  
+          speed="1" 
+          loop  
+          autoplay>  
+        </lottie-player>
       </div>
     );
   }
@@ -119,7 +120,6 @@ export default function Quiz() {
   for (let i = 0; i <= CategorieTable.length; i++) {
     if (CategorieTable[i].categorieQuiz === quizParam) {
       color = CategorieTable[i].class;
-      console.log(color);
       break;
     }
   }

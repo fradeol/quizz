@@ -25,9 +25,9 @@
   }
 
   .profil .score p {
-    top: 57px;
-    left: calc(50% - 5px);
-    width: 200px;
+    top: 27px;
+    left: calc(50% - 50px);
+    width: 100px;
     font-weight: bold;
     font-family: 'Noto Sans', sans-serif;
     font-size: 14px;
@@ -45,9 +45,9 @@
 
   .donneesUser {
     position: absolute;
-    width: 110px;
+    width: 230px;
     top: 30vh;
-    left: calc(50vw - 55px);
+    left: calc(50vw - 115px);
     text-align: center;
   }
  

@@ -8,6 +8,7 @@ import Start from "../pages/Start";
 import Private from "../pages/Private/Private";
 import Home from '../pages/Private/Home';
 import Profil from '../pages/Private/Profil';
+import Decompte from "../pages/Decompte";
 
 const Router = () => {
   return (

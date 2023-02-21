@@ -24,7 +24,7 @@ export default function Profil() {
             </div>
             
             <div className='connectedBtn'>
-                <Link to='/Private/Home' >Historique des scores</Link>
+                {/* <Link to='/Private/Home' >Historique des scores</Link> */}
                 <Link to='/Private/Home' >Retour</Link>
             </div>
             
