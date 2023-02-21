@@ -167,6 +167,15 @@ input:focus{
   font-family: 'Overlock', cursive;
  
 }
+
+.BtnExit{
+  background-color: var(--crazyQuizOrange);
+  color: var(--white);
+ }
+
+ .BtnExitContainer button{
+  margin: 0;
+ }
 .HTMLButtonColor{
   background-color: var(--colorHTML);
   color: var(--white);
