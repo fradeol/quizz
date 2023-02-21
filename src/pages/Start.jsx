@@ -3,6 +3,7 @@ import logoHTMLBanner from "../img/logoHTMLBanner.svg"
 import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import '../pages/Private/Home.css';
 
 
 export default function Start() {
@@ -30,8 +31,8 @@ export default function Start() {
         
                     <p className="pStart">Une réponse possible, <br /> et 20 secondes par questions !!</p>
                 <main>
-                    <Link to={`/Quiz/${TextBanner}`}><button className="connectedBtn">Commencer</button></Link>
-                    <Link to={`/Categories`}><button className="connectedBtn">Retour</button></Link>
+                    <Link to={`/Quiz/${TextBanner}`}><button className="ButtonStart">Commencer</button></Link>
+                    <Link to={`/Categories`}><button className="ButtonStart">Retour</button></Link>
                     </main>
                 </section>
             )

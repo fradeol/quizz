@@ -36,3 +36,19 @@
     padding: 25px;
     width: 100%;
 }
+
+.ButtonStart {
+    cursor: pointer;
+    border: none;
+    color: var(--textButton);
+    background-color: var(--backgroundButton);
+    /* border-radius: 10px; */
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+    margin-bottom: 50px;
+    padding: 25px;
+    width: 80%;
+}
+
+
+
