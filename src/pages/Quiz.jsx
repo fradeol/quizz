@@ -44,7 +44,7 @@ export default function Quiz() {
 
   useEffect(() => {
     loadData();
-  },);
+  }, []);
 
   useEffect(() => {
     if (!loading) {
@@ -105,12 +105,7 @@ export default function Quiz() {
     
     return (
       <div className="loadGif">
-        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json"  
-          background="transparent"  
-          speed="1" 
-          loop  
-          autoplay>  
-        </lottie-player>
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>
       </div>
     );
   }
