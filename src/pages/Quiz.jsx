@@ -102,20 +102,22 @@ export default function Quiz() {
     isFinish = false;
   }
 
+
+  function timer() {
   if (loading) {
     return (
       <div>
-        <lottie-player
-          src="https://assets8.lottiefiles.com/packages/lf20_a2chheio.json"
-          background="transparent"
-          speed="1"
-          loop
-          autoplay
-        ></lottie-player>
+        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json" 
+         background="transparent" 
+          speed="1"  
+          loop  
+          autoplay></lottie-player>
       </div>
     );
   }
+  }
 
+  setInterval(timer, 3000)
   let color;
   for (let i = 0; i <= CategorieTable.length; i++) {
     if (CategorieTable[i].categorieQuiz === quizParam) {
