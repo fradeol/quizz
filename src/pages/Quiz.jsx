@@ -102,8 +102,6 @@ export default function Quiz() {
     isFinish = false;
   }
 
-
-  function timer() {
   if (loading) {
     return (
       <div>
@@ -115,9 +113,7 @@ export default function Quiz() {
       </div>
     );
   }
-  }
 
-  setInterval(timer, 3000)
   let color;
   for (let i = 0; i <= CategorieTable.length; i++) {
     if (CategorieTable[i].categorieQuiz === quizParam) {
