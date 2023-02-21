@@ -5,6 +5,7 @@ import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import { UserContext } from "../context/UserContext";
+import { RxCross1 } from "react-icons/rx";
 
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
@@ -136,7 +137,13 @@ export default function Quiz() {
               autoplay
             ></lottie-player>
           </div>
-          <span className="seconds">{seconds}</span>
+          <div>
+            <span className="seconds">{seconds}</span>
+          </div>
+          <div className="BtnExitContainer">
+            <Link to="/Categories"><button className="BtnExit">Categories</button></Link>
+          </div>
+          
         </div>
         <div className="conteneurReponse">
           {responses.map((q, j) => {

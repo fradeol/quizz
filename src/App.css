@@ -90,6 +90,15 @@
   width: 100px;
 }
 
+.BtnExit{
+  background-color: var(--crazyQuizOrange);
+  color: var(--white);
+ }
+
+ .BtnExitContainer button{
+  margin: 0;
+ }
+
 .conteneurReponse{
   padding-top: 25px;
   display: flex;
