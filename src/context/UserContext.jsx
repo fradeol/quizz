@@ -13,64 +13,31 @@ import { auth } from "../firebase-config";
 
 export const UserContext = createContext();
 
-const CategorieTable = [
-  {
-    class: "HTMLButtonColor",
-    categorieQuiz: "HTML",
-    img: logoHTMLBanner,
-    span: "BannerColorWhite",
-    categorie: "Categories"
-  },
-  {
-    class: "CSSButtonColor",
-    categorieQuiz: "CSS",
-    img: logoCSSBanner,
-    span: "BannerColorWhite",
-    categorie: "Categories"
-  },
-  {
-    class: "JSButtonColor",
-    categorieQuiz: "JavaScript",
-    img: logoJSBanner,
-    span: "BannerColorBlack",
-    categorie: "Categories"
-  },
-  {
-    class: "ReactButtonColor",
-    categorieQuiz: "React",
-    img: logoReactBanner,
-    span: "BannerColorBlack",
-    categorie: "Categories"
-  },
-];
-
 export function UserContextProvider(props) {
-  const signUp = (email, password) =>
-    createUserWithEmailAndPassword(auth, email, password);
-
-  const signIn = (email, password) =>
-    signInWithEmailAndPassword(auth, email, password);
-
-  const [currentUser, setCurrentUser] = useState();
-  const [loadingData, setLoadingData] = useState(true);
+// Constante qui permet de créer un état pour les modales. Par défaut, l'état des deux modales
+// est sur false, ce qui signifie qu'elle ne sont pas affichées
   const [modalState, setModalState] = useState({
     signUpModal: false,
     signInModal: false,
   });
 
+// Constante qui permet de basculer les modales via le paramètre modal
   const toggleModals = (modal) => {
+// Si le paramètre modal de toggleModals est signIn, on passe l'état de la modale signInModal à true
     if (modal === "signIn") {
       setModalState({
         signInModal: true,
         signUpModal: false,
       });
     }
+// Si le paramètre modal de toggleModals est signUp, on passe l'état de la modale signUpModal à true
     if (modal === "signUp") {
       setModalState({
         signInModal: false,
         signUpModal: true,
       });
     }
+// Si le paramètre modal de toggleModals est close, on repasse l'état des deux modales à false
     if (modal === "close") {
       setModalState({
         signInModal: false,
@@ -79,8 +46,24 @@ export function UserContextProvider(props) {
     }
   };
 
+  // Constante qui permet de stocker dans signUp, 2 paramètres : email et password
+  const signUp = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password);
+
+// Constante qui permet de stocker dans signIn, 2 paramètres : email et password
+  const signIn = (email, password) =>
+    signInWithEmailAndPassword(auth, email, password);
+
+// Constante qui permet de créer un état pour les utilisateurs
+  const [currentUser, setCurrentUser] = useState();
+
+// Constante je sais pas ce que c'est désolé :'(
+  const [loadingData, setLoadingData] = useState(true);
+
+// Permet de faire quelque chose que je ne comprend pas :'(
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => 
+    {
       setCurrentUser(currentUser);
       setLoadingData(false);
     });
@@ -88,15 +71,50 @@ export function UserContextProvider(props) {
     return unsubscribe;
   }, []);
 
+// Constante qui permet de créer un tableau avec des informations selon les 4 catégories.
+  const CategorieTable = [
+    {
+      class: "HTMLButtonColor",
+      categorieQuiz: "HTML",
+      img: logoHTMLBanner,
+      span: "BannerColorWhite",
+      categorie: "Categories"
+    },
+    {
+      class: "CSSButtonColor",
+      categorieQuiz: "CSS",
+      img: logoCSSBanner,
+      span: "BannerColorWhite",
+      categorie: "Categories"
+    },
+    {
+      class: "JSButtonColor",
+      categorieQuiz: "JavaScript",
+      img: logoJSBanner,
+      span: "BannerColorBlack",
+      categorie: "Categories"
+    },
+    {
+      class: "ReactButtonColor",
+      categorieQuiz: "React",
+      img: logoReactBanner,
+      span: "BannerColorBlack",
+      categorie: "Categories"
+    },
+  ];
+
   return (
+// Permet de fournir via .Provider le hook decréation d'un Context, useContext()
+// que l'on a nommé UserContext
     <UserContext.Provider
+// Permet de fournir grâce au contexte les constantes suivantes créer dans 
       value={{
         modalState,
         toggleModals,
         signUp,
-        currentUser,
         signIn,
-        CategorieTable,
+        currentUser,
+        CategorieTable
       }}
     >
       {!loadingData && props.children}

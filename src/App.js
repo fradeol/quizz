@@ -1,13 +1,12 @@
 import './App.css';
 import Router from './components/Router';
-import SignUpModal from './context/UserContext';
+import Decompte from './pages/Decompte';
 
 function App() {
   return (
     <div className="App">
-      {/* <Fetch/> */}
-      {/* <Timer/> */}
       <Router />
+      {/* <Decompte/> */}
     </div>
   );
 }

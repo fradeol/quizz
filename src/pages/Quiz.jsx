@@ -1,11 +1,11 @@
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
 import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import logoTrophee from "../img/logoTrophee.png";
 import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
-import "../styles/Resultat.css";
 import { UserContext } from "../context/UserContext";
+import { RxCross1 } from "react-icons/rx";
 
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
@@ -40,7 +40,6 @@ export default function Quiz() {
       questionFiltered.sort((a, b) => Math.random() - 0.5);
       setQuestions(questionFiltered);
       setLoading(false);
-      // console.log(questionFiltered);
     });
   }
 
@@ -101,6 +100,7 @@ export default function Quiz() {
     setSeconds(20);
     isFinish = false;
   }
+  
 
   if (loading) {
     return (
@@ -118,7 +118,6 @@ export default function Quiz() {
   for (let i = 0; i <= CategorieTable.length; i++) {
     if (CategorieTable[i].categorieQuiz === quizParam) {
       color = CategorieTable[i].class;
-      console.log(color);
       break;
     }
   }
@@ -138,12 +137,7 @@ export default function Quiz() {
               autoplay
             ></lottie-player>
           </div>
-          <div>
-            <span className="seconds">{seconds}</span>
-          </div>
-          <div className="BtnExitContainer">
-            <Link to="/Categories"><button className="BtnExit">Categories</button></Link>
-          </div>
+          <span className="seconds">{seconds}</span>
         </div>
         <div className="conteneurReponse">
           {responses.map((q, j) => {

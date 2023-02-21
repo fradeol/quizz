@@ -53,94 +53,23 @@
   list-style: none;
 }
 
-h1 , legend{
-  font-size: 40px;
-  font-family: 'Bangers', cursive;
-  font-weight: lighter;
-  color: var(--title);
-  text-align: center;
-}
-
-h2, h3, p, a, label{
-  font-family: 'Overlock', cursive;
-}
-
-h2{
-  font-size: 60px;
-}
-
-h3{
-  font-size: 40px;
-  padding: 40px;
-}
-
-p, a, input {
-  font-size: 30px;
-  padding: 20px;
-  color: var(--text);
-}
-
-main{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-a{
-  text-align: center;
-  font-size: 30px;
-  padding: 10px;
-}
-h3{
-  font-size: 30px;
-  margin: 20px;
-}
-
-
-button{
-  cursor: pointer;
-  border: none;
-  color: var(--textButton);
-  background-color: var(--backgroundButton);
-  border-radius: 10px;
-  font-family: 'Bangers', cursive;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 70%;
-  padding: 30px;
-  font-size: 30px;
-}
-
-button:hover{
-  background-color: var(--backgroundButtonHover);
-}
-
-input{
-  background-color: var(--backgroundInput);
-  outline: none;
-  border: none;
-  border-radius: 10px;
-  margin-top: 30px;
-  width: 70%;
-  ;
-}
-
-input::placeholder{
-  color:var(--textPlaceholder)
-}
-
-input:focus{
-  background-color: var(--backgroundInputFocus);
-  color: var(--textInputFocus);
-}
-
 
 /* CSS du quiz */
+.loadGif {
+  margin-top: 50%;
+}
 
 .conteneurQuiz{
-  padding-top: 30px;
+  padding-top: 20px;
   width: 90%;
   margin: auto;
+}
+
+.conteneurQuiz h1 {
+  font-family: 'Bangers', cursive;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 20px;
 }
 
 .conteneurTimer{
@@ -148,15 +77,33 @@ input:focus{
   justify-content: center;
   align-items: center;
   column-gap: 30px;
-  padding-top: 25px;
+  padding-top: 20px;
 }
+
+.conteneurTimer span {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.timer {
+  width: 100px;
+}
+
+.BtnExit{
+  background-color: var(--crazyQuizOrange);
+  color: var(--white);
+ }
+
+ .BtnExitContainer button{
+  margin: 0;
+ }
 
 .conteneurReponse{
   padding-top: 25px;
   display: flex;
   flex-direction: column;
   row-gap: 25px;
- 
 }
 
 .conteneurReponse button{
@@ -164,8 +111,10 @@ input:focus{
   display: block;
   font-size: 20px;
   padding: 20px 10px;
+  border-radius: 10px;
   font-family: 'Overlock', cursive;
- 
+  border: none;
+  height: 100px;
 }
 
 .BtnExit{
@@ -181,35 +130,35 @@ input:focus{
   color: var(--white);
 }
 
-.HTMLButtonColor:hover{
+/* .HTMLButtonColor:hover{
   background-color: var(--colorHTMLHover);
-}
+} */
 .CSSButtonColor{
   background-color: var(--colorCSS);
   color: var(--white);
 }
 
-.CSSButtonColor:hover{
+/* .CSSButtonColor:hover{
   background-color: var(--colorCSSHover);
-}
+} */
 
 .JSButtonColor{
   background-color: var(--colorJS);
   color: var(--text);
 }
 
-.JSButtonColor:hover{
+/* .JSButtonColor:hover{
   background-color: var(--colorJSHover);
-}
+} */
 
 .ReactButtonColor{
   background-color: var(--colorReact);
   color: var(--text);
 }
 
-.ReactButtonColor:hover{
+/* .ReactButtonColor:hover{
   background-color: var(--colorReactHover);
-}
+} */
 
 .BannerColorWhite{
  color: white;

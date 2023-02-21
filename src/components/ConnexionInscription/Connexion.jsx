@@ -2,7 +2,7 @@ import "./ConnexionInscription.css";
 import { UserContext } from "../../context/UserContext";
 import { useContext, useRef, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Connexion() {
   const { modalState, toggleModals, signIn } = useContext(UserContext);
@@ -10,18 +10,13 @@ export default function Connexion() {
   const [validation, setValidation] = useState("");
   const navigate = useNavigate();
 
-  const inputs = useRef([]);
-
   const closeModal = () => {
     setValidation("")
     toggleModals("close")
   }
 
-  const addInputs = (element) => {
-    if (element && !inputs.current.includes(element)) {
-      inputs.current.push(element);
-    }
-  };
+  const signInEmail = useRef();
+  const signInPassword = useRef();
 
   const formRef = useRef();
 
@@ -30,18 +25,24 @@ export default function Connexion() {
 
     try {
        await signIn(
-        inputs.current[0].value,
-        inputs.current[1].value
+        signInEmail.current.value,
+        signInPassword.current.value
       );
       setValidation("");
       toggleModals("close")
       navigate ("/Private/Home")
       
-    } catch (error) {
+    } 
+    
+    catch (error) {
        setValidation("L'email ou le mot de passe n'est pas le bon")
         }
       }
     
+    function notSubscribedYet() {
+      toggleModals("close")
+      toggleModals("signUp")
+    }
 
   return (
     <>
@@ -63,7 +64,7 @@ export default function Connexion() {
                 <legend>Connexion</legend>
 
                 <input
-                  ref={addInputs}             
+                  ref={signInEmail}             
                   type={"email"}
                   placeholder="adresse@mail.fr"
                   name="email"
@@ -72,7 +73,7 @@ export default function Connexion() {
                 />
 
                 <input
-                  ref={addInputs}         
+                  ref={signInPassword}         
                   type={"password"}
                   placeholder="mot de passe"
                   name="password"
@@ -80,15 +81,11 @@ export default function Connexion() {
                   required
                 />
                 <p className="red">{validation}</p>
-                <div className="checkbox">
-                  <label htmlFor=""> Se souvenir de moi</label>
-                  <input type={"checkbox"} />
-                </div>
 
-                <button type="submit">se connecter</button>
+                <button id="validation" type="submit">Se Connecter</button>
 
                 <div className="inscrit">
-                  <Link to="/Inscription">Pas encore inscrit ?</Link>
+                  <p onClick={notSubscribedYet}>Pas encore inscrit ?</p>
                 </div>
               </fieldset>
             </form>

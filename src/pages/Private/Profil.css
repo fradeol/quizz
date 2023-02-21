@@ -1,0 +1,66 @@
+
+.courbe {
+    position: relative;
+    background: #E7E7E7;
+    height: 50vh;
+  }
+  
+  .courbe::after {
+    content: '';
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    height: 68%;
+  }
+
+  .profil .score img, .profil .score p {
+    position: absolute;
+    z-index: 1;
+    top: 50px;
+    border-radius: 0;
+    width: 25px;
+  }
+
+  .profil .score p {
+    top: 27px;
+    left: calc(50% - 50px);
+    width: 100px;
+    font-weight: bold;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+  }
+
+  .profil img {
+    width: 100px;
+    border-radius: 50%;
+    border: 3px solid #E7E7E7;
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    left: calc(50% - 50px);
+  }
+
+  .donneesUser {
+    position: absolute;
+    width: 230px;
+    top: 30vh;
+    left: calc(50vw - 115px);
+    text-align: center;
+  }
+ 
+  .donneesUser p {
+    margin-bottom: 30px;
+  }
+
+  .profil .connectedBtn a {
+    margin-bottom: -30px;
+  }
+
+  .profil .connectedBtn {
+    margin-top: 200px;
+  }
+
+  

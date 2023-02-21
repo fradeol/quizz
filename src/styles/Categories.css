@@ -1,0 +1,37 @@
+
+
+.cate main a button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: none;
+    color: var(--textButton);
+    padding: 25px;
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+}
+
+.cate main {
+    margin-top: 25px;
+}
+
+/* Page Start */
+
+main a button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: none;
+    color: var(--textButton);
+    padding: 25px;
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Bangers', cursive;
+    font-size: 30px;
+}

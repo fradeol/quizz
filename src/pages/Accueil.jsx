@@ -4,20 +4,25 @@ import Inscription from "../components/ConnexionInscription/Inscription";
 import Connexion from "../components/ConnexionInscription/Connexion";
 import Header from "../components/header/Header";
 import { UserContext } from "../context/UserContext";
-
+import '../styles/Accueil.css'
 
 export default function Accueil() {
 
     const {toggleModals} = useContext(UserContext)
 
     return (
-        <main>
-            <Inscription/>
-            <Connexion/>
-            <Header />
-            <Link to='/Categories' ><button>Categories</button></Link>
-            <a ><button onClick={() => toggleModals('signIn') }>Se connecter</button></a>
-            <a ><button onClick={() => toggleModals('signUp') }>S'inscrire</button></a>
-        </main>
+        
+            <main>
+                <Inscription/>
+                <Connexion/>
+                <div className="acc">
+                    <Header />
+                    <div className="btn-acc">
+                        <Link to='/Categories' >Categories</Link>
+                        <button onClick={() => toggleModals('signIn') }>Se connecter</button>
+                        <button onClick={() => toggleModals('signUp') }>S'inscrire</button>
+                    </div>
+                </div>
+            </main>
     )
 }
