@@ -6,9 +6,10 @@ import { Link } from "react-router-dom"
 export default function Header() {
   return (
     <header>
-      <Link to="/Private/Home"><figure className="imgLogo">
-        <img src={logoCrazyQuiz} alt="" />
-      </figure></Link>
+      <Link to="/Private/Home">
+        <div className="ImgLogoQuiz">
+          <img src={logoCrazyQuiz} alt="" />
+        </div></Link>
       <Link to="/Private/Home"><figure className="imgCat">
       <img src={logoCrazyQuizCat} alt="" />
     </figure></Link>

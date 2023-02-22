@@ -18,9 +18,12 @@ export default function Start() {
       let ColorTextBanner = CategorieTable[i].span;
       return (
         <section className="conteneurStart">
+          <header>
           <div className="ImgLogoQuiz">
             <img src={logoCrazyQuiz} alt="" />
           </div>
+          </header>
+     
 
           <div className="ImgHTML">
             <img src={CategorieBanner} alt="" />
