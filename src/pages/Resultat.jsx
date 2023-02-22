@@ -15,11 +15,7 @@ export default function Resultat() {
         
         <div className="resultat">
             
-            <header >
-                <img className="logo" src={logoCrazyQuiz} alt="" />
-                <img className="profile" src={logoCrazyQuizCat} alt="" />
-                < FaCircle className="FaCircleLogOut" onClick={() => toggleModals('signIn') }/>
-            </header>
+            <Header/>
             <div className="result-content">
                 {isWon
                     ? <div>

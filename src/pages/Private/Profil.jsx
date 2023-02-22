@@ -6,15 +6,17 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 
 export default function Profil() {
-
+    
     const {currentUser} = useContext(UserContext)
     console.log(currentUser);
+    
     return (
         <div className="profil">
             <div className='score'>
                 <img src={logoTrophee} alt="" />
                 <p>1850 pts</p>
-            </div>
+
+            </div> 
             <img src={logoCrazyQuizCat} alt="" />
             <div className='courbe'></div>
             <div className="donneesUser">

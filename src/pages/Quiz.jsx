@@ -203,7 +203,9 @@ export default function Quiz() {
     );
   }
   function renderEnd() {
+    
     isFinish = true;
+    
     return (
       <div>
         <Header />
