@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { FaCircle } from "react-icons/fa";
-import LogOut from "../ConnexionInscription/Deconnexion";
 
 export default function Header() {
   const { currentUser } = useContext(UserContext);

@@ -19,9 +19,11 @@ fieldset input {
 
 legend {
   display: block;
+  font-family: 'Bangers', cursive;
+  color: var(--crazyQuizOrange);
   margin: auto;
   padding: 0px 20px;
-  font-size: 20px;
+  font-size: 35px;
 }
 
 .label {
@@ -59,7 +61,7 @@ input::placeholder {
 .conteneurModal{
     position: absolute;
     left: 5%;
-    top: 15%;
+    top: 30%;
     width: 85%; 
     background-color: white;
     border-radius: 20px;
