@@ -15,8 +15,10 @@ export default function Home() {
             <Header />
             <div className="connectedBtn">
                 <Link to='/Categories' >Categories</Link>
+                <div className="Connexion">
                 <Link to='/Private/Profil' >Votre Profil</Link>
                 <LogOut/>
+                </div>
             </div>
         </main>
     )

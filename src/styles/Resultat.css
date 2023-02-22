@@ -32,6 +32,7 @@ header .profile {
     margin-bottom: 50px;
     font-family: 'Bangers', cursive;
     font-size: 30px;
+    cursor: pointer;
 }
 
 p{

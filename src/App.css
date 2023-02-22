@@ -7,7 +7,7 @@
   --black:#000000;
   --white:#ffffff;
   --gray:#d9d9d9;
-  --darkGray:#656262;
+  --darkGray:#f0f0f0;
   --crazyQuizOrange:#ff9900;
   --crazyQuizPurple:#9900ff;
 
@@ -53,10 +53,19 @@
   list-style: none;
 }
 
-
+body{
+ background-color: var(--darkGray);
+}
 /* CSS du quiz */
 .loadGif {
   margin-top: 50%;
+}
+
+.CupGif{
+  margin-top: -100px;
+  width: 390px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .conteneurQuiz{
@@ -66,24 +75,29 @@
 }
 
 .conteneurQuiz h1 {
-  font-family: 'Bangers', cursive;
+  /* font-family: 'Bangers', cursive; */
+  font-family: 'Overlock', cursive;
+  font-weight: 700;
   text-align: center;
   letter-spacing: 1px;
   margin-top: 20px;
+  font-size: 30px;
 }
 
 .conteneurTimer{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   column-gap: 30px;
   padding-top: 20px;
+  min-height: 125px;
 }
 
 .conteneurTimer span {
-  font-size: 25px;
-  font-weight: bold;
-  font-family: 'Noto Sans', sans-serif;
+  font-size: 35px;
+  font-weight: lighter;
+  /* font-family: 'Noto Sans', sans-serif; */
+  font-family: 'Bangers', cursive;
 }
 
 .timer {
@@ -91,12 +105,17 @@
 }
 
 .BtnExit{
-  background-color: var(--crazyQuizOrange);
-  color: var(--white);
+  background-color: var(--darkGray);
+  color: var(--crazyQuizOrange);
+
  }
 
  .BtnExitContainer button{
   margin: 0;
+ }
+
+ .BtnExitContainer {
+  /* padding-left: 30px; */
  }
 
 .conteneurReponse{
@@ -170,24 +189,24 @@ img{
 /* CSS PAGE START */
 
 .conteneurStart{
-  background-color: var(--backgroundStartQuiz);
+  background-color: var(--darkGray);
   height: 100vh;
 }
 
 .ImgLogoQuiz{
   display: flex;
   justify-content: center;
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 .ImgLogoQuiz img {
   width: 280px;
   object-fit: cover;
-  rotate: 2deg;
+  rotate: 3deg;
 }
 
 .ImgHTML{
-  margin-top: 70px;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 }
@@ -207,16 +226,18 @@ img{
 }
 
 .pStart{
-  margin-top: 50px;
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
+.Gif{
+  /* margin-top: -50px; */
+  width: 390px;
+}
 button.BtnStart{
   margin: auto;
   display: flex;
   justify-content: center;
   margin-top: 60px;
-  
 }
 

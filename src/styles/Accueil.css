@@ -20,8 +20,8 @@
     /* border-radius: 10px; */
     font-family: 'Bangers', cursive;
     font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 35px;
+    margin-bottom: 5px;
     padding: 25px;
     width: 100%;
    /* height: 100px; */
@@ -47,3 +47,6 @@
     /* width: 80%; */
 }
 
+.Connexion{
+    margin-top: 80px;
+}
