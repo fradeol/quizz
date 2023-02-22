@@ -1,6 +1,5 @@
 import logoTrophee from "../img/logoTrophee.png";
-import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
-import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
+import Header from "../components/header/Header";
 import '../styles/Resultat.css';
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import { Link } from "react-router-dom";
@@ -37,5 +36,6 @@ export default function Resultat() {
             </div>
             
         </div>
+
     )
 }

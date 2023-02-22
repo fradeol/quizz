@@ -63,7 +63,6 @@ body{
 
 .CupGif{
   margin-top: -100px;
-  width: 390px;
   height: 300px;
   object-fit: cover;
 }
@@ -107,6 +106,13 @@ body{
 .BtnExit{
   background-color: var(--darkGray);
   color: var(--crazyQuizOrange);
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-family: 'Bangers', cursive;
+  font-size: 30px;
+  padding: 25px;
 
  }
 

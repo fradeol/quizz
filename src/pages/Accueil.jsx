@@ -15,8 +15,8 @@ export default function Accueil() {
             <main>
                 <Inscription/>
                 <Connexion/>
+                <Header />
                 <div className="acc">
-                    <Header />
                     <div className="btn-acc">
                         <Link to='/Categories' >Categories</Link>
                         <div className="Connexion">
