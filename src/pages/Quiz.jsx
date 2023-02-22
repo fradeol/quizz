@@ -6,12 +6,14 @@ import "../styles/Resultat.css";
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import { UserContext } from "../context/UserContext";
 import { RxCross1 } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
 export default function Quiz() {
   const { CategorieTable } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -28,6 +30,7 @@ export default function Quiz() {
   const quizParam = url.pathname.split("/")[2];
 
   async function loadData() {
+    
     await axios(API_URL).then(function (response) {
       let questionsData = response.data;
       let compteur = 0;
@@ -37,16 +40,17 @@ export default function Quiz() {
           compteur++;
         }
       });
+      
       questionFiltered.sort((a, b) => Math.random() - 0.5);
       setQuestions(questionFiltered);
-      setLoading(false);
+      setLoading(false)
     });
   }
 
   useEffect(() => {
     setTimeout(() => {
-      loadData(); 
-    }, 4000)
+      loadData();
+    }, 4000);
   }, []);
 
   useEffect(() => {
@@ -67,6 +71,7 @@ export default function Quiz() {
       reponseData.push(questions[actualQuestion].reponse1);
       reponseData.sort((a, b) => Math.random() - 0.5);
       setReponses(reponseData);
+      
     }
   }, [actualQuestion, questions]);
 
@@ -102,8 +107,7 @@ export default function Quiz() {
     setSeconds(20);
     isFinish = false;
   }
-  
- 
+
   for (let i = 0; i <= CategorieTable.length - 1; i++) {
     if (CategorieTable[i].categorieQuiz === quizParam) {
       var TextBanner = CategorieTable[i].categorieQuiz;
@@ -111,33 +115,33 @@ export default function Quiz() {
       var ColorTextBanner = CategorieTable[i].span;
     }
   }
-  
-  
+
   if (loading) {
     return (
       <section className="conteneurStart">
         <header>
-      <div className="ImgLogoQuiz">
-        <img src={logoCrazyQuiz} alt="" />
-      </div>
-      </header>
-      <div className="ImgHTML">
-        <img src={CategorieBanner} alt="" />
-        <span className={ColorTextBanner}>{TextBanner}</span>
-      </div>
+          <div className="ImgLogoQuiz">
+            <img src={logoCrazyQuiz} alt="" />
+          </div>
+        </header>
+        <div className="ImgHTML">
+          <img src={CategorieBanner} alt="" />
+          <span className={ColorTextBanner}>{TextBanner}</span>
+        </div>
 
-      <p className="pStart">
-        Une réponse possible, <br /> et 20 secondes par questions !!
-      </p>
-      <div className="Gif">
-        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json" 
-         background="transparent" 
-          speed="1"  
-          loop  
-          autoplay></lottie-player>
-      </div>
-    </section>
-    
+        <p className="pStart">
+          Une réponse possible, <br /> et 20 secondes par questions !!
+        </p>
+        <div className="Gif">
+          <lottie-player
+            src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+          ></lottie-player>
+        </div>
+      </section>
     );
   }
 
@@ -147,6 +151,17 @@ export default function Quiz() {
       color = CategorieTable[i].class;
       break;
     }
+  }
+
+  function Alert() {
+
+
+    const choice = window.confirm("Êtes vous sur de vouloir quitter le Quiz?");
+
+    if (choice) {
+      navigate ("/Categories")
+    } 
+
   }
 
   function renderQuestion() {
@@ -167,12 +182,15 @@ export default function Quiz() {
             <span className="seconds">{seconds}</span>
           </div>
           <div className="BtnExitContainer">
-            <Link to="/Categories"><button className="BtnExit">Retour</button></Link>
+            
+              <button className="BtnExit" onClick={Alert}>
+                Retour
+              </button>
+            
           </div>
-          
         </div>
         <h1>{questions[actualQuestion].question}</h1>
-        
+
         <div className="conteneurReponse">
           {responses.map((q, j) => {
             if (q === goodAnwser) {
@@ -205,15 +223,18 @@ export default function Quiz() {
           {score >= 5 ? (
             <div>
               <div className="CupGif">
-              {/* <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_touohxv0.json" 
+                {/* <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_touohxv0.json" 
                background="transparent"
                 speed="0.7"
                 autoplay></lottie-player> */}
-                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_asket2d3.json"
+                <lottie-player
+                  src="https://assets9.lottiefiles.com/packages/lf20_asket2d3.json"
                   background="transparent"
                   speed="1"
-                  loop  autoplay></lottie-player>
-                </div>
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <p>
                 Féliciation vous avez la moyenne ! Votre score est de : {score}
               </p>
@@ -221,15 +242,18 @@ export default function Quiz() {
           ) : (
             <div>
               <div className="CupGif">
-              {/* <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_9xRnlw.json"
+                {/* <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_9xRnlw.json"
                 background="transparent"
                 speed="0.8"
                autoplay></lottie-player> */}
-               <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ilwhiuo7.json"
-                background="transparent"
-                speed="1"
-                loop  autoplay></lottie-player>
-               </div>
+                <lottie-player
+                  src="https://assets1.lottiefiles.com/packages/lf20_ilwhiuo7.json"
+                  background="transparent"
+                  speed="1"
+                  loop
+                  autoplay
+                ></lottie-player>
+              </div>
               <p>Dommage, vous êtes mauvais. Votre score est de : {score}</p>
             </div>
           )}
