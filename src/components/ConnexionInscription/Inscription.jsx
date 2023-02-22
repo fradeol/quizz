@@ -57,8 +57,6 @@ export default function Inscription()
           signUpEmail.current.value,
           signUpPassword.current.value
         );
-        console.log(signUpEmail.current.value)
-        console.log(signUpPassword.current.value)
         formRef.current.reset();
         setValidation("")
         toggleModals("close")

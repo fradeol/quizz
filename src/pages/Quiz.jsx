@@ -18,7 +18,7 @@ export default function Quiz() {
   const [actualQuestion, setActualQuestion] = useState(0);
   const [responses, setReponses] = useState([]);
   const [score, setScore] = useState(0);
-  const [seconds, setSeconds] = useState(20);
+  const [seconds, setSeconds] = useState(24);
 
   const API_URL = "http://localhost:8000/api/questions";
 
@@ -44,7 +44,9 @@ export default function Quiz() {
   }
 
   useEffect(() => {
-    loadData();
+    setTimeout(() => {
+      loadData(); 
+    }, 4000)
   }, []);
 
   useEffect(() => {
@@ -101,16 +103,40 @@ export default function Quiz() {
     isFinish = false;
   }
   
-
+ 
+  for (let i = 0; i <= CategorieTable.length - 1; i++) {
+    if (CategorieTable[i].categorieQuiz === quizParam) {
+      var TextBanner = CategorieTable[i].categorieQuiz;
+      var CategorieBanner = CategorieTable[i].img;
+      var ColorTextBanner = CategorieTable[i].span;
+    }
+  }
+  
+  
   if (loading) {
     return (
-      <div>
+      <section className="conteneurStart">
+      <div className="ImgLogoQuiz">
+        <img src={logoCrazyQuiz} alt="" />
+      </div>
+
+      <div className="ImgHTML">
+        <img src={CategorieBanner} alt="" />
+        <span className={ColorTextBanner}>{TextBanner}</span>
+      </div>
+
+      <p className="pStart">
+        Une réponse possible, <br /> et 20 secondes par questions !!
+      </p>
+      <div className="Gif">
         <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_lh8mfcj1.json" 
          background="transparent" 
           speed="1"  
           loop  
           autoplay></lottie-player>
       </div>
+    </section>
+    
     );
   }
 
@@ -176,14 +202,32 @@ export default function Quiz() {
         <div className="result-content">
           {score >= 5 ? (
             <div>
-              <img src={logoTrophee} alt="" />
+              <div className="CupGif">
+              {/* <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_touohxv0.json" 
+               background="transparent"
+                speed="0.7"
+                autoplay></lottie-player> */}
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_asket2d3.json"
+                  background="transparent"
+                  speed="1"
+                  loop  autoplay></lottie-player>
+                </div>
               <p>
                 Féliciation vous avez la moyenne ! Votre score est de : {score}
               </p>
             </div>
           ) : (
             <div>
-              <img src={logoBrokenTrophee} alt="" />
+              <div className="CupGif">
+              {/* <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_9xRnlw.json"
+                background="transparent"
+                speed="0.8"
+               autoplay></lottie-player> */}
+               <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_ilwhiuo7.json"
+                background="transparent"
+                speed="1"
+                loop  autoplay></lottie-player>
+               </div>
               <p>Dommage, vous êtes mauvais. Votre score est de : {score}</p>
             </div>
           )}
