@@ -4,17 +4,22 @@ import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import '../styles/Resultat.css';
 import logoBrokenTrophee from "../img/logoBrokenTrophee.png";
 import { Link } from "react-router-dom";
+import { FaCircle } from "react-icons/fa";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
+
 
 export default function Resultat() {
     let isWon= true;
-
-
+    const {toggleModals} = useContext(UserContext)
     return (
         
         <div className="resultat">
+            
             <header >
                 <img className="logo" src={logoCrazyQuiz} alt="" />
                 <img className="profile" src={logoCrazyQuizCat} alt="" />
+                < FaCircle className="FaCircleLogOut" onClick={() => toggleModals('signIn') }/>
             </header>
             <div className="result-content">
                 {isWon

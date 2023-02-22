@@ -1,7 +1,7 @@
 
 .courbe {
     position: relative;
-    background: #E7E7E7;
+    background: #fff;
     height: 50vh;
   }
   
@@ -12,7 +12,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: #fff;
+    background: var(--darkGray);
     height: 68%;
   }
 
@@ -22,6 +22,8 @@
     top: 50px;
     border-radius: 0;
     width: 25px;
+    border: none; 
+    box-shadow: none;
   }
 
   .profil .score p {
@@ -36,7 +38,7 @@
   .profil img {
     width: 100px;
     border-radius: 50%;
-    border: 3px solid #E7E7E7;
+    box-shadow: 5px -5px 3px lightgrey, -5px -5px 3px lightgrey;
     position: absolute;
     z-index: 1;
     top: 100px;
@@ -45,10 +47,9 @@
 
   .donneesUser {
     position: absolute;
-    width: 230px;
     top: 30vh;
-    left: calc(50vw - 115px);
     text-align: center;
+    width: 100vw;
   }
  
   .donneesUser p {

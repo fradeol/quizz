@@ -20,7 +20,7 @@ export default function Profil() {
             <div className="donneesUser">
                 {/* <p>{currentUser.displayName}</p> */}
                 <p>{currentUser.email}</p>
-                <p>Mot de Passe</p>
+                <p>Modifier mot de passe</p>
             </div>
             
             <div className='connectedBtn'>
