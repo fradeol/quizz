@@ -11,7 +11,6 @@
     border: none;
     color: var(--textButton);
     background-color: var(--backgroundButton);
-    /* border-radius: 10px; */
     font-family: 'Bangers', cursive;
     font-size: 30px;
     margin-top: 35px;
@@ -28,12 +27,11 @@
     border: none;
     color: var(--textButton);
     background-color: var(--backgroundButton);
-    /* border-radius: 10px; */
     font-family: 'Bangers', cursive;
     font-size: 30px;
-    /* margin-top: 50px; */
     margin-bottom: 50px;
     padding: 25px;
+    margin-bottom: 50px;
     width: 100%;
 }
 
@@ -42,7 +40,6 @@
     border: none;
     color: var(--textButton);
     background-color: var(--backgroundButton);
-    /* border-radius: 10px; */
     font-family: 'Bangers', cursive;
     font-size: 30px;
     margin-bottom: 50px;

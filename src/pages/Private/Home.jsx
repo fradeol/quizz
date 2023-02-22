@@ -13,11 +13,13 @@ export default function Home() {
             <Inscription/>
             <Connexion/>
             <Header />
-            <div className="connectedBtn">
-                <Link to='/Categories' >Categories</Link>
-                <div className="Connexion">
-                <Link to='/Private/Profil' >Votre Profil</Link>
-                <LogOut/>
+            <div className="acc">
+                <div className="btn-acc">
+                    <Link to='/Categories' >Categories</Link>
+                    <div className="Connexion">
+                    <Link to='/Private/Profil' >Votre Profil</Link>
+                    <LogOut/>
+                    </div>
                 </div>
             </div>
         </main>
