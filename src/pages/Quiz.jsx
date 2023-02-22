@@ -153,7 +153,6 @@ export default function Quiz() {
     const goodAnwser = questions[actualQuestion].reponse1;
     return (
       <main className="conteneurQuiz">
-        <h1>{questions[actualQuestion].question}</h1>
         <div className="conteneurTimer">
           <div className="timer">
             <lottie-player
@@ -172,6 +171,8 @@ export default function Quiz() {
           </div>
           
         </div>
+        <h1>{questions[actualQuestion].question}</h1>
+        
         <div className="conteneurReponse">
           {responses.map((q, j) => {
             if (q === goodAnwser) {

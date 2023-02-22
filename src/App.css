@@ -7,7 +7,7 @@
   --black:#000000;
   --white:#ffffff;
   --gray:#d9d9d9;
-  --darkGray:#656262;
+  --darkGray:#f0f0f0;
   --crazyQuizOrange:#ff9900;
   --crazyQuizPurple:#9900ff;
 
@@ -53,7 +53,9 @@
   list-style: none;
 }
 
-
+body{
+ background-color: var(--darkGray);
+}
 /* CSS du quiz */
 .loadGif {
   margin-top: 50%;
@@ -73,10 +75,13 @@
 }
 
 .conteneurQuiz h1 {
-  font-family: 'Bangers', cursive;
+  /* font-family: 'Bangers', cursive; */
+  font-family: 'Overlock', cursive;
+  font-weight: 700;
   text-align: center;
   letter-spacing: 1px;
   margin-top: 20px;
+  font-size: 30px;
 }
 
 .conteneurTimer{
@@ -100,8 +105,8 @@
 }
 
 .BtnExit{
-  background-color: white;
-  color: var(--crazyQuizPurple)
+  background-color: var(--darkGray);
+  color: var(--crazyQuizOrange);
 
  }
 
@@ -184,7 +189,7 @@ img{
 /* CSS PAGE START */
 
 .conteneurStart{
-  background-color: var(--backgroundStartQuiz);
+  background-color: var(--darkGray);
   height: 100vh;
 }
 
@@ -222,7 +227,7 @@ img{
 
 .pStart{
   text-align: center;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .Gif{

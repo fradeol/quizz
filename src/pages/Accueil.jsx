@@ -19,8 +19,10 @@ export default function Accueil() {
                     <Header />
                     <div className="btn-acc">
                         <Link to='/Categories' >Categories</Link>
+                        <div className="Connexion">
                         <button onClick={() => toggleModals('signIn') }>Se connecter</button>
                         <button onClick={() => toggleModals('signUp') }>S'inscrire</button>
+                        </div>
                     </div>
                 </div>
             </main>
