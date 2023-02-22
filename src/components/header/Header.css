@@ -12,6 +12,7 @@ header .imgLogo img{
 header .imgCat{
     display: flex;
     justify-content: center;
+    margin: 25px 0;
 }
 
 header .imgCat img{
