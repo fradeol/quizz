@@ -3,6 +3,8 @@ import logoHTMLBanner from "../img/logoHTMLBanner.svg";
 import logoCSSBanner from "../img/logoCSSBanner.svg";
 import logoJSBanner from "../img/logoJSBanner.svg";
 import logoReactBanner from "../img/logoReactBanner.svg";
+import { signOut } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 import {
   signInWithEmailAndPassword,
@@ -10,6 +12,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../firebase-config";
+import LogOut from "../components/ConnexionInscription/Deconnexion";
 
 export const UserContext = createContext();
 
@@ -53,6 +56,17 @@ export function UserContextProvider(props) {
 // Constante qui permet de stocker dans signIn, 2 paramètres : email et password
   const signIn = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
+
+    const navigate = useNavigate;
+
+    const logOut = async () => {
+      try {
+        await signOut(auth);
+        navigate("/");
+      } catch {
+      //   alert("tu peux pas te déco maintenant");
+      }
+    };
 
 // Constante qui permet de créer un état pour les utilisateurs
   const [currentUser, setCurrentUser] = useState();
@@ -114,7 +128,8 @@ export function UserContextProvider(props) {
         signUp,
         signIn,
         currentUser,
-        CategorieTable
+        CategorieTable,
+        logOut
       }}
     >
       {!loadingData && props.children}

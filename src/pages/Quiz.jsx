@@ -116,10 +116,11 @@ export default function Quiz() {
   if (loading) {
     return (
       <section className="conteneurStart">
+        <header>
       <div className="ImgLogoQuiz">
         <img src={logoCrazyQuiz} alt="" />
       </div>
-
+      </header>
       <div className="ImgHTML">
         <img src={CategorieBanner} alt="" />
         <span className={ColorTextBanner}>{TextBanner}</span>
@@ -167,7 +168,7 @@ export default function Quiz() {
             <span className="seconds">{seconds}</span>
           </div>
           <div className="BtnExitContainer">
-            <Link to="/Categories"><button className="BtnExit">Categories</button></Link>
+            <Link to="/Categories"><button className="BtnExit">Retour</button></Link>
           </div>
           
         </div>
