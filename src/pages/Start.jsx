@@ -4,6 +4,7 @@ import { UserContext } from "../context/UserContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../pages/Private/Home.css";
+import Header from "../components/header/Header";
 
 export default function Start() {
   const url = new URL(window.location.href);
@@ -18,11 +19,7 @@ export default function Start() {
       let ColorTextBanner = CategorieTable[i].span;
       return (
         <section className="conteneurStart">
-          <header>
-          <div className="ImgLogoQuiz">
-            <img src={logoCrazyQuiz} alt="" />
-          </div>
-          </header>
+  <Header/>
      
 
           <div className="ImgHTML">
