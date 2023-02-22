@@ -30,6 +30,7 @@ export default function Quiz() {
   const quizParam = url.pathname.split("/")[2];
 
   async function loadData() {
+    
     await axios(API_URL).then(function (response) {
       let questionsData = response.data;
       let compteur = 0;
@@ -39,9 +40,10 @@ export default function Quiz() {
           compteur++;
         }
       });
+      
       questionFiltered.sort((a, b) => Math.random() - 0.5);
       setQuestions(questionFiltered);
-      setLoading(false);
+      setLoading(false)
     });
   }
 
@@ -69,6 +71,7 @@ export default function Quiz() {
       reponseData.push(questions[actualQuestion].reponse1);
       reponseData.sort((a, b) => Math.random() - 0.5);
       setReponses(reponseData);
+      
     }
   }, [actualQuestion, questions]);
 
