@@ -2,13 +2,11 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Accueil from "../pages/Accueil";
 import Categories from "../pages/Categories";
-import Resultat from "../pages/Resultat";
 import Quiz from "../pages/Quiz";
 import Start from "../pages/Start";
 import Private from "../pages/Private/Private";
 import Home from '../pages/Private/Home';
 import Profil from '../pages/Private/Profil';
-import Decompte from "../pages/Decompte";
 
 const Router = () => {
   return (
@@ -22,7 +20,6 @@ const Router = () => {
       <Route path="/Categories" element={<Categories />}></Route>
       <Route path="/Quiz/:categorie" element={<Quiz />}></Route>
       <Route path="/Start/:categorie" element={<Start />}></Route>
-      <Route path="/Resultat" element={<Resultat />}></Route>
     </Routes>
   );
 };

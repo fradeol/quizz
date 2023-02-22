@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import logoCrazyQuizCat from "../img/logoCrazyQuizCat.svg";
-import logoCrazyQuiz from "../img/logoCrazyQuiz.png";
 import "../styles/Resultat.css";
 import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
@@ -115,11 +113,7 @@ export default function Quiz() {
   if (loading) {
     return (
       <section className="conteneurStart">
-        <header>
-          <div className="ImgLogoQuiz">
-            <img src={logoCrazyQuiz} alt="" />
-          </div>
-        </header>
+      <Header/>
         <div className="ImgHTML">
           <img src={CategorieBanner} alt="" />
           <span className={ColorTextBanner}>{TextBanner}</span>
@@ -226,7 +220,9 @@ export default function Quiz() {
                 ></lottie-player>
               </div>
               <p>
-                Féliciation vous avez la moyenne ! Votre score est de : {score}
+                Féliciation vous avez la moyenne ! 
+                <br/>
+                Votre score est de : {score}
               </p>
             </div>
           ) : (
@@ -244,7 +240,10 @@ export default function Quiz() {
                   autoplay
                 ></lottie-player>
               </div>
-              <p>Dommage, vous êtes mauvais. Votre score est de : {score}</p>
+              <p>
+                Dommage, vous êtes mauvais. 
+                <br/>
+                Votre score est de : {score}</p>
             </div>
           )}
 

@@ -61,7 +61,7 @@ input::placeholder {
 .conteneurModal{
     position: absolute;
     left: 5%;
-    top: 30%;
+    top: 32%;
     width: 85%; 
     background-color: white;
     border-radius: 20px;
