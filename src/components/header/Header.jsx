@@ -16,7 +16,7 @@ export default function Header() {
   if (!currentUser) {
     return (
       <header>
-        <Link to="/Private/Home">
+        <Link to="/">
           <div className="ImgLogoQuiz">
             <img src={logoCrazyQuiz} alt="" />
           </div>
@@ -26,7 +26,6 @@ export default function Header() {
             <img src={logoCrazyQuizCat} alt="" />
             < FaCircle className="FaCircleLogOut" onClick={() => toggleModals('signIn') }/>
           </div>
-       
       </header>
     );
   }
@@ -39,10 +38,14 @@ export default function Header() {
         </div>
       </Link>
       
-        <div className="imgCat">
-          <img src={logoCrazyQuizCat} alt="" />
-          < FaCircle className="FaCircleLogIn" onClick={logOut} />
-        </div>
+      <Link to="/Private/Profil">
+          <div className="imgCat">
+            <img src={logoCrazyQuizCat} alt="" />
+              <Link to="/">
+                <FaCircle className="FaCircleLogIn" onClick={logOut} />
+              </Link>
+          </div>
+        </Link>
       
     </header>
   );
