@@ -17,6 +17,7 @@ export default function Quiz() {
   const [responses, setReponses] = useState([]);
   const [score, setScore] = useState(0);
   const [seconds, setSeconds] = useState(24);
+  const [nbrePartie, setNbrePartie] = useState(0)
 
   const API_URL = "http://localhost:8000/api/questions";
 
@@ -41,6 +42,10 @@ export default function Quiz() {
       setLoading(false);
     });
   }
+
+  useEffect(() => {
+  window.localStorage.setItem('MY_KEY', JSON.stringify({scoreTotal: score, partieTotale: nbrePartie}));
+  }, [score])
 
   useEffect(() => {
     setTimeout(() => {
@@ -153,6 +158,7 @@ export default function Quiz() {
 
   function renderQuestion() {
     const goodAnwser = questions[actualQuestion].reponse1;
+    
     return (
       <main className="conteneurQuiz">
         <div className="conteneurTimer">
@@ -195,11 +201,13 @@ export default function Quiz() {
         </div>
       </main>
     );
+    
   }
   function renderEnd() {
     
     isFinish = true;
     
+    // setNbrePartie(nbrePartie + 1)
     return (
       <div>
         <Header />
@@ -256,5 +264,8 @@ export default function Quiz() {
       </div>
     );
   }
+  
+ 
+
   return actualQuestion < 10 ? renderQuestion() : renderEnd();
 }

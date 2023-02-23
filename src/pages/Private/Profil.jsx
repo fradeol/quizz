@@ -6,23 +6,25 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 
 export default function Profil() {
-    
+    const tableData = []
     const {currentUser} = useContext(UserContext)
-    console.log(currentUser);
-    
+    // console.log(currentUser);
+    const data = JSON.parse(window.localStorage.getItem('MY_KEY'))
+    tableData.push(data)
+    console.log(tableData);
     return (
         <div className="profil">
             <div className='score'>
                 <img src={logoTrophee} alt="" />
-                <p>1850 pts</p>
-
+                <p>{data.scoreTotal} pts</p>
+                
             </div> 
             <img src={logoCrazyQuizCat} alt="" />
             <div className='courbe'></div>
             <div className="donneesUser">
                 {/* <p>{currentUser.displayName}</p> */}
                 <p>{currentUser.email}</p>
-                <p>Modifier mot de passe</p>
+                {/* <p>Modifier mot de passe</p> */}
             </div>
             
             <div className='connectedBtn'>
