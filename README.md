@@ -8,6 +8,10 @@ Le quizz permet de tester plusieurs parties de leur parcours grace à un choix d
 
 L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouver un historique de son score, il faudra alors qu'il soit connecté et donc enregistré.
 
+<div> 
+  <img src="src/img/Readme/Screenshot_1.png" alt="Photo de notre application" >
+  </div>
+
 ## Nos objectifs: 
 
 <ul>
@@ -45,5 +49,17 @@ L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouv
 
 * [![HTML5][html.com]][html-url]
 * [![CSS3][css.com]][css-url]
-* [![JS][JS.com]][JS-url]
+* [![JS][js.com]][js-url]
+* [![React][react.com]][react-url]
 
+
+[html.com]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[html-url]: https://html.com/
+[css.com]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
+[css-url]: https://www.w3.org/Style/CSS/
+[react.com]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://fr.reactjs.org/
+[js.com]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+[js-url]: https://developer.mozilla.org/fr/docs/Web/JavaScript
+[sass.com]: https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white
+[sass-url]: https://sass-lang.com/
