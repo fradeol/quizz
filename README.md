@@ -45,5 +45,5 @@ L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouv
 
 * [![HTML5][html.com]][html-url]
 * [![CSS3][css.com]][css-url]
-* [![SASS][sass.com]][sass-url]
+* [![JS][JS.com]][JS-url]
 
