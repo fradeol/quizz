@@ -16,7 +16,7 @@ L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouv
 <li>Préparer la soutenance de ce projet</li>
 </ul>
 
-### Structure de notre application
+### Structure de notre application:
 
 <ul>
 <li>un écran d'accueil qui affichera le titre de l'application et la possibilité d'accéder au quizz</li>
@@ -38,3 +38,9 @@ L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouv
 <li>Utilisation du Trello</li>
 <li>Github pour travailler en groupe</li>
 </ul>
+
+### Langages Utilisés
+
+* [![HTML5][html.com]][html-url]
+* [![CSS3][css.com]][css-url]
+* [![JS][JS.com]][Js-url]
