@@ -1,5 +1,7 @@
 # Crazy Quiz.
 
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 Afin de préparer ses élèves au passage de leur diplôme, l'école a décidé de mettre en place une application de quizz de culture générale afin que les étudiants puissent tester leurs connaissances de façon ludique.
 
 Le quizz permet de tester plusieurs parties de leur parcours grace à un choix de catégorie qui sera alors au choix lorsque l'application sera lancée.
