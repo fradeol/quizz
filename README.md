@@ -1,4 +1,4 @@
-# Crazy Quiz.
+<h1 align="center"> # Crazy Quiz.</h1>
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
@@ -8,9 +8,24 @@ Le quizz permet de tester plusieurs parties de leur parcours grace à un choix d
 
 L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouver un historique de son score, il faudra alors qu'il soit connecté et donc enregistré.
 
-<div> 
-  <img src="src/img/Readme/Screenshot_1.png" alt="Photo de notre application" >
+<div align="center"> 
+  <img src="src/img/Readme/Screenshot_1.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_2.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_11.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_3.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_4.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_5.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_6.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_10.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_7.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_8.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_9.png" alt="Photo de notre application" height="250px" >
   </div>
+  
+  
+  ## La team qui a développé sur le projet:
+
+<a href="https://github.com/Alexisdelecroix" alt="lien vers le github de Alexis">@AlexisDelecroix</a>, <a href="https://github.com/CyrilleDeletre" alt="lien vers le github de Cyrille">@CyrilleDeletre</a>, <a href="https://github.com/fradeol" alt="lien vers le github de François">@FrançoisDeOliveira</a>,
 
 ## Nos objectifs: 
 
