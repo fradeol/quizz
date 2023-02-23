@@ -1,0 +1,165 @@
+fieldset {
+  border: 2px solid black;
+  margin: 15px;
+  border-radius: 20px;
+  text-align: center;
+  column-gap: 30px;
+}
+
+fieldset input {
+  margin-top: 30px;
+  padding: 10px 0 7px 20px;
+  height: 40px;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(223, 223, 223);
+}
+
+
+legend {
+  display: block;
+  font-family: 'Bangers', cursive;
+  color: var(--crazyQuizOrange);
+  margin: auto;
+  padding: 0px 20px;
+  font-size: 35px;
+}
+
+.label {
+  width: 100%;
+  display: flex;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+  margin-top: 30px;
+}
+.checkbox input {
+  margin: 0;
+  padding: 0;
+  width: 15px;
+  
+}
+
+input::placeholder {
+  font-size: 20px;
+  color: black;
+}
+
+.inscrit {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.inscrit p {
+  color: var(--crazyQuizPurple);
+}
+
+.conteneurModal{
+    position: absolute;
+    left: 5%;
+    top: 32%;
+    width: 85%; 
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.red {
+  color: red;
+}
+
+.centre {
+  display: flex;
+  justify-content: center;
+}
+
+.center{
+  margin: auto;
+}
+
+.centre img {
+  width: 90px;
+}
+
+.logoCat {
+  margin-right: 56px;
+}
+
+.centre .close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+  font-size: large;
+  font-weight: bold;
+  height: 40px;
+  color: var(--crazyQuizPurple);
+  background-color: var(--white);
+  border: none;
+  border-radius: 5px;
+}
+
+.centre .close:hover {
+  background-color: var(--crazyQuizPurple);
+  color: var(--white);
+}
+
+.overlay {
+    position: absolute;
+    background-color: black;
+    opacity: 0.5;
+    width: 100vw;
+    height: 100vh;
+}
+
+#password {
+  margin-bottom: 30px;
+}
+
+#validation {
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--crazyQuizOrange);
+  color: var(--white);
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+#subscribe #password {
+  margin-bottom: 0;
+}
+
+#repeatPassword {
+  margin-bottom: 30px;
+}
+
+#subscribe #validation {
+  margin-bottom: 20px;
+}
+
+@media (min-width: 600px) {
+  .conteneurModal{
+    position: absolute;
+    left: 20%;
+    top: 15%;
+    width: 60%; 
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+  }
+}
+  @media (min-width: 1024px) {
+    .conteneurModal{
+      position: absolute;
+      left: 35%;
+      top: 15%;
+      width: 30%; 
+      background-color: white;
+      border-radius: 20px;
+      padding: 10px;
+    }
+  }
