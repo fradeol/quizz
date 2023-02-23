@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+<h1 align="center"> # Crazy Quiz.</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 
-## Available Scripts
+Afin de préparer ses élèves au passage de leur diplôme, l'école a décidé de mettre en place une application de quizz de culture générale afin que les étudiants puissent tester leurs connaissances de façon ludique.
 
-In the project directory, you can run:
+Le quizz permet de tester plusieurs parties de leur parcours grace à un choix de catégorie qui sera alors au choix lorsque l'application sera lancée.
 
-### `npm start`
+L'utilisateur peut accéder au quizz sans s'inscrire mais si il souhaite retrouver un historique de son score, il faudra alors qu'il soit connecté et donc enregistré.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center"> 
+  <img src="src/img/Readme/Screenshot_1.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_2.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_11.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_3.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_4.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_5.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_6.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_10.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_7.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_8.png" alt="Photo de notre application" height="250px" >
+  <img src="src/img/Readme/Screenshot_9.png" alt="Photo de notre application" height="250px" >
+  </div>
+  
+  
+  ## La team qui a développé sur le projet:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<a href="https://github.com/Alexisdelecroix" alt="lien vers le github de Alexis">@AlexisDelecroix</a>, <a href="https://github.com/CyrilleDeletre" alt="lien vers le github de Cyrille">@CyrilleDeletre</a>, <a href="https://github.com/fradeol" alt="lien vers le github de François">@FrançoisDeOliveira</a>,
 
-### `npm test`
+## Nos objectifs: 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<ul>
+<li>Création de la charte graphique</li>
+<li>Établir la maquette</li>
+<li>Développer le site web en épousant au mieux la maquette</li>
+<li>Travailler en groupe en utilisant Github</li>
+<li>Préparer la soutenance de ce projet</li>
+</ul>
 
-### `npm run build`
+### Structure de notre application:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<ul>
+<li>un écran d'accueil qui affichera le titre de l'application et la possibilité d'accéder au quizz</li>
+<li>un écran qui permettra de choisir une catégorie</li>
+<li>un écran, une fois la catégorie choisie, qui affiche la question, un timer de 20s et 4 possibilités de réponses</li>
+<li>un écran qui affiche le résultat final</li>
+<li>un écran pour visualiser/éditer le proil de l'utilisateur</li>
+<li>un écran pour la connexion et l'inscription de l'utilisateur</li>
+</ul>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Resources utlisées: 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<ul>
+<li>Framework React</li>
+<li>React Icons pour les icones</li>
+<li>LottiesFiles pour les animations</li>
+<li>Figma pour la maquette et Wireframe</li>
+<li>GoogleFonts pour les polices</li>
+<li>Utilisation du Trello</li>
+<li>Github pour travailler en groupe</li>
+</ul>
 
-### `npm run eject`
+### Langages Utilisés
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* [![HTML5][html.com]][html-url]
+* [![CSS3][css.com]][css-url]
+* [![JS][js.com]][js-url]
+* [![React][react.com]][react-url]
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[html.com]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
+[html-url]: https://html.com/
+[css.com]: https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white
+[css-url]: https://www.w3.org/Style/CSS/
+[react.com]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://fr.reactjs.org/
+[js.com]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
+[js-url]: https://developer.mozilla.org/fr/docs/Web/JavaScript
+[sass.com]: https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white
+[sass-url]: https://sass-lang.com/
